@@ -13,6 +13,7 @@
 Project Owner: Stickers for Charity Club President - Arushi Bharadwaj
 
 ## Week 0
+[Team Review Ticket](https://github.com/dsblack0/stickers_for_charity/issues/3)
 
 | Name | Individual GitHubPages | Review Ticket |
 | ---  | ---                    | ---           |
