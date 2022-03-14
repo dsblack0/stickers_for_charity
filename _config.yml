@@ -3,3 +3,5 @@ description: "This GitHub project is for CSA-period1 team runtime-terror project
 webserver: "https://www.dnclubsearch.tech/"
 kramdown:
   input: GFM
+
+theme: jekyll-theme-cayman
