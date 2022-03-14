@@ -1,4 +1,4 @@
-Welcome to the Stickers for Charity wiki!
+# m2-clouds
 
 **Collaborators:**
 
