@@ -1,3 +1,5 @@
+{% include navigation.html %}
+
 # Web Project Plans & Wireframes
 
 ## Project Description
