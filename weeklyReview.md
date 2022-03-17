@@ -1,5 +1,8 @@
 {% include navigation.html %}
 
+## Week 1
+[Team Review Ticket](https://github.com/dsblack0/stickers_for_charity/issues/21)
+
 ## Week 0
 [Team Review Ticket](https://github.com/dsblack0/stickers_for_charity/issues/3)
 
