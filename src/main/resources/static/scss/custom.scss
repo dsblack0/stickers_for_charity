@@ -33,6 +33,7 @@ html, body {
 .titlehead {
   color:var(--primary) !important;
   font-family: Arial;
+
 }
 
 .nav-link{
@@ -44,12 +45,12 @@ html, body {
 }
 
 .navbar{
-  background-color:var(--body-bg);
+  background-color:var(--primary);
 }
 
 .bodytext{
   color:var(--secondary) !important;
-  font-family: 'Consolas', sans-serif;
+  font-family: Arial;
 }
 
 .frontdisplay{

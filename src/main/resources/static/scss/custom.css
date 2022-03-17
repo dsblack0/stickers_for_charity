@@ -1,14 +1,16 @@
 .theme-dark {
     --primary: #3d5964 ;
     --secondary: #376F85;
-    --body-bg: #fafefb;
+    --body: #fafefb;
+    --bg: #c6eafa;
     --offset: 5%;
 }
 
 .theme-light {
     --primary: #f19379;
     --secondary: #ed6b40;
-    --body-bg: #000000;
+    --body: #000000;
+    --bg: #fff2a8;
     --offset: 45%;
 }
 
@@ -17,7 +19,7 @@
 }
 
 html, body {
-    background-color: var(--body-bg) !important;
+    background-color: var(--bg) !important;
 }
 
 .titlehead {
@@ -26,15 +28,15 @@ html, body {
 }
 
 .nav-link {
-    color: var(--primary);
-    font-family: "Consolas", sans-serif;
+    color: var(--bg);
+    font-family: Arial;
 }
 :hover > .nav-link {
     color: var(--secondary);
 }
 
 .navbar {
-    background-color: var(--body-bg);
+    background-color: var(--primary);
 }
 
 .bodytext {
@@ -43,11 +45,13 @@ html, body {
 }
 
 .frontdisplay {
-    background-position-y: var(--offset);
-    background-size: cover;
     min-height: 330px;
-    text-align: center;
+    background-size: cover;
     padding: 150px 0;
+    background-position-y: var(--offset);
+    text-align: center;
+    /*
+     */
 }
 
 /*# sourceMappingURL=custom.css.map */
