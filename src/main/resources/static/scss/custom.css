@@ -47,11 +47,9 @@ html, body {
 .frontdisplay {
     min-height: 330px;
     background-size: cover;
-    padding: 150px 0;
+    /* padding: 150px 0;*/
     background-position-y: var(--offset);
     text-align: center;
-    /*
-     */
 }
 
 /*# sourceMappingURL=custom.css.map */
