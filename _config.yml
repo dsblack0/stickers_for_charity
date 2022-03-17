@@ -3,3 +3,4 @@ kramdown:
   input: GFM
 
 theme: jekyll-theme-cayman
+markdown: kramdown
