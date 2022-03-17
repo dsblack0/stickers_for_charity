@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home Page</title>
-</head>
-<body>
+<!-- This page is illustrative and contains ideas about HTML formatting -->
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
 
+<head><div layout:fragment="metadata" th:remove="tag">
+    <title>Home</title>
+</div></head>
+
+<body><div layout:fragment="content" th:remove="tag">
+    <!-- Start of body content specific to page -->
+    <div class="content">
+        <div class="frontdisplay">
+        </div>
+        <div style="text-align: center;">
+            <h1 class="titlehead">Stickers for Charity</h1>
+            <a class="bodytext">Welcome to the Stickers for Charity</a>
+        </div>
+    </div>
+</div>
 </body>
+
 </html>

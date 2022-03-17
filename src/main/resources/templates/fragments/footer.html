@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <!--
+    <style>
+        .foot{
+            width: 100%;
+            bottom: 0px;
+            background-color: #17a2b8;
+            color: #fff;
+            position: absolute;
+            padding-bottom: 2.5rem;
+            padding-top:20px;
+            text-align:center;
+            font-size:30px;
+            font-weight:bold;
+        }
+    </style>
+    -->
 </head>
 <body>
-    <footer class="foot">
-        <p style="background-color: #17a2b8; font: #f9e07f;">
-            <!--<center>Contact Us</center>>-->
-        </p>
-        </footer>
-
-        <style>
-            .foot{
-                width: 100%;
-                bottom: 0px;
-                background-color: #17a2b8;
-                color: #fff;
-                position: absolute;
-                padding-bottom: 2.5rem;
-                padding-top:20px;
-                text-align:center;
-                font-size:30px;
-                font-weight:bold;
-
-            }
-
-        </style>
+<div th:fragment="footer">
+    <div class="contact" style="height: 35vh;">
+            <div class="row justify-content-center" style="margin-top: 2%;">
+                <h3 style="margin-top: 3%;">Follow Us</h3>
+            </div>
+            <div class="row justify-content-center">
+                <a href=https://github.com/nighthawkcoders target="_blank"><i class="fa fa-github"></i></a>
+            </div>
     </div>
-
+</div>
 </body>
 </html>
