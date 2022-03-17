@@ -8,33 +8,32 @@
 ## Requirements from SFC
 **Sponsor:** Arushi Bharadwaj (Stickers for Charity Club)
 
-**Color Scheme:** 
+### Color Scheme:
 - Main background colors: Blue or purple
 - Highlight colors: Match our logo (picture provided)
 
-**Required Pages:**
-- Club Member profiles > Sam
-- Events Page > Maggie
-- Home Page > Maggie
-- Sticker Selling Page / Order Page + Sticker Design Page > Chenxin
+### Required Pages:
+- Club Member profiles
+- Events Page
+- Home Page
+- Sticker Selling Page / Order Page + Sticker Design Page
    - Images lead to ordering options
-- Maybe one for custom stickers > Kaavya
-- Donations / Sponsors Page > Prisha
-- Sign-up Page > Prisha
-- Use lots of Sassy, CSS, Bootstrap (lots of images too) > Maggie
+- Maybe one for custom stickers
+- Donations / Sponsors Page
+- Sign-up Page
+- Use lots of Sassy, CSS, Bootstrap (lots of images too)
 - Social Media Links 
 
-**Additional Team Ideas:**
-- Password feature for members to login and edit pages in future > Sam
+### Additional Team Ideas:
+- Password feature for members to login and edit pages in future
+- Home Page
+     - Link access to order and donations page on Home page
+- Have a database with a login so that club members can add new stickers to the order page + any other information on sales or donations
 
-**Additional Resources for Ideas:**
+### Additional Resources for Ideas
 - Past Webpage: Login to Wix.com provided b/c was never published
 - [Past Events](https://docs.google.com/document/d/1-mrhf90zkpaDLu2kP498Cd9tpI4pocaZQk2-gfyPCxQ/edit?usp=sharing) --> For descriptions on Events Page
 
-## Ideas
-- Home page with access to order and donations page
-- Have a database with a login so that club members can add new stickers to the order page + any other information on sales or donations
-- Page dedicated for profiles of main club members
 
 ## Wires
 **Front page for Stickers for Charity website:**\
