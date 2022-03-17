@@ -13,16 +13,19 @@
 - Highlight colors: Match our logo (picture provided)
 
 **Required Pages:**
-- Club Member profiles --> Sam
-- Events Page --> Maggie
-- Home Page --> Maggie
-- Sticker Selling Page / Order Page + Sticker Design Page --> Chenxin
+- Club Member profiles > Sam
+- Events Page > Maggie
+- Home Page > Maggie
+- Sticker Selling Page / Order Page + Sticker Design Page > Chenxin
    - Images lead to ordering options
-- Maybe one for custom stickers --> Kaavya
-- Donations / Sponsors Page --> Prisha
-- Sign-up Page --> Prisha
-- Use lots of Sassy, CSS, Bootstrap (lots of images too)
+- Maybe one for custom stickers > Kaavya
+- Donations / Sponsors Page > Prisha
+- Sign-up Page > Prisha
+- Use lots of Sassy, CSS, Bootstrap (lots of images too) > Maggie
 - Social Media Links 
+
+**Additional Team Ideas:**
+- Password feature for members to login and edit pages in future > Sam
 
 **Additional Resources for Ideas:**
 - Past Webpage: Login to Wix.com provided b/c was never published
