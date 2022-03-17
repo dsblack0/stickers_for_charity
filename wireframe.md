@@ -6,6 +6,8 @@
 **Website Purpose:** Inform audience about the Stickers for Charity club and provide a platform for them to donate to charity through buying stickers on the website
 
 ## Requirements from SFC
+**Sponsor:** Arushi Bharadwaj (Stickers for Charity Club)
+
 **Color Scheme:** 
 - Main background colors: Blue or purple
 - Highlight colors: Match our logo (picture provided)
