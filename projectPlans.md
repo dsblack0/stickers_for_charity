@@ -45,12 +45,8 @@
 | Prisha | Membership Sign-Up Page<br>Donations/Sponsors Page |
 [Task Progress (Scrum Board):](https://github.com/dsblack0/stickers_for_charity/projects/1?card_filter_query=label%3A%22project+features%22)
 
-## Wires
-**Front page for Stickers for Charity website:**\
-![image](https://user-images.githubusercontent.com/55467785/157729448-8ccfd2b3-6be3-4e37-bd97-3c5f6854f915.png)\
-[Wireframe Draft](https://docs.google.com/presentation/d/1ybz3M7shFSvOfrpQMVcCzuK4tXOB1UHRscraEQJ09U4/edit?usp=sharing)\
-**Colors and Logo:**\
-![image](https://user-images.githubusercontent.com/55467785/157729346-ac7e705a-6f0e-4860-8ba2-06a79ddec9e6.png)
+## [Wireframes](wireframes.md)
+
 
 ## Success Idea
 This will be successful for the club because of the extensive features the club members will utilize and for the community to get in touch and recognize the clubs achievements.
