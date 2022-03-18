@@ -34,6 +34,15 @@
 - Past Webpage: Login to Wix.com provided b/c was never published
 - [Past Events](https://docs.google.com/document/d/1-mrhf90zkpaDLu2kP498Cd9tpI4pocaZQk2-gfyPCxQ/edit?usp=sharing) --> For descriptions on Events Page
 
+## Project Assignments
+
+| Names | Job(s) |
+| ---   | ---    |
+| Chenxin | Deployment<br>Sticker Selling Page / Order Page |
+| Kaavya | Custom Stickers Page |
+| Maggie | Layout Styling<br>Home Page<br>Events Page |
+| Sam | Club Member Profiles<br>Sponsor Editing Feature |
+| Prisha | Membership Sign-Up Page<br>Donations/Sponsors Page |
 
 ## Wires
 **Front page for Stickers for Charity website:**\
