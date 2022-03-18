@@ -12,5 +12,12 @@ import java.util.Objects;
 @Controller
 public class MainController {
 
+    @GetMapping("/index")
+    public String index(Model model) {
+        return "index";
+    }
+
+    @GetMapping("/signup")
+    public String signup(Model model) { return "signup"; }
 }
 
