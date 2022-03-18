@@ -17,3 +17,6 @@
 | Maggie |[Github Pages](https://maggie3000.github.io/CSAindividualrepoTRI3) | [Ticket](https://github.com/dsblack0/stickers_for_charity/issues/10) |
 | Sam | [Github Pages](https://dsblack0.github.io/sam-tri3/) | [Ticket](https://github.com/dsblack0/stickers_for_charity/issues/8) |
 | Prisha | [Github Pages](https://prishamaiti.github.io/DataStructures) | [Ticket](https://github.com/PrishaMaiti/DataStructures/issues/1) |
+
+## Project Owner Update
+![SFC Meeting Minutes](https://user-images.githubusercontent.com/70492417/159044447-0e6d725c-463d-459c-b94a-c927d5c52bb9.PNG)
