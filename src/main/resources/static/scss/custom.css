@@ -1,14 +1,18 @@
 .theme-dark {
-    --primary: #3d5964 ;
-    --secondary: #376F85;
+    --header:#00acc1;
+    --accents: #00acc1;
+    --primary: #ffffff;
+    --secondary: #85def0;
     --body: #fafefb;
-    --bg: #c6eafa;
+    --bg: #3d5964;
     --offset: 5%;
 }
 
 .theme-light {
+    --header: #ed6b40;
+    --accents: #ffe245;
     --primary: #f19379;
-    --secondary: #ed6b40;
+    --secondary: #f9873e;
     --body: #000000;
     --bg: #fff2a8;
     --offset: 45%;
@@ -23,7 +27,8 @@ html, body {
 }
 
 .titlehead {
-    color: var(--primary) !important;
+    padding: 50px 0;
+    color: var(--header) !important;
     font-family: Arial;
 }
 
@@ -45,10 +50,9 @@ html, body {
 }
 
 .frontdisplay {
-    min-height: 330px;
-    background-size: cover;
-    /* padding: 150px 0;*/
     background-position-y: var(--offset);
+    background-size: cover;
+    min-height: 330px;
     text-align: center;
 }
 
