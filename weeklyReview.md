@@ -7,6 +7,10 @@
 # Week 1
 [Team Review Ticket](https://github.com/dsblack0/stickers_for_charity/issues/21)
 
+## Project Owner Update:
+- [Board Member Bios](https://docs.google.com/document/d/1pfJN_9DkENcgvRpftDZpbCAzpCrfEMn4ted27uqbVoI/edit?usp=sharing)
+- [Pictures from Events/Sticker Designs](https://drive.google.com/drive/folders/1sK8rFKFxjVc3NEXr9iftYKgfsNL6rJcG?usp=sharing)
+
 # Week 0
 [Team Review Ticket](https://github.com/dsblack0/stickers_for_charity/issues/3)
 
