@@ -3,8 +3,8 @@
 ## Updating our project
 ### Policy:
 **Deployment manager will update the website at least once a week (on Sunday), but usually every 3 days in order to keep up with commits**
- - All branches will be directed to main repo, so only main repository will be deployed
- - 
+ - only main repository will be deployed
+ - gh-pages is our other branch and is seperately deployed with jekyll
 
 ### Steps:
 1. Cd into stickers_for_charity then pull from Github using command `git pull` 
