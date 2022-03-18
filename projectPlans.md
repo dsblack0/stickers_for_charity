@@ -43,6 +43,7 @@
 | Maggie | Layout Styling<br>Home Page<br>Events Page |
 | Sam | Club Member Profiles<br>Sponsor Editing Feature |
 | Prisha | Membership Sign-Up Page<br>Donations/Sponsors Page |
+[Task Progress (Scrum Board):](https://github.com/dsblack0/stickers_for_charity/projects/1?card_filter_query=label%3A%22project+features%22)
 
 ## Wires
 **Front page for Stickers for Charity website:**\
