@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<div layout:fragment="metadata" th:remove="tag">
+    <title>Sign Up</title>
+</div>
+
+<div layout:fragment="content" th:remove="tag">
+    <br>
+    <br>
+    <form>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Enter amount in $USD</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <a href="#" class="btn btn-primary">Donate</a>
+    </form>
+</div>
+</html>
