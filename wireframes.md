@@ -26,3 +26,8 @@
 ![Tri3-Wireframes (1)](https://user-images.githubusercontent.com/70492417/159053341-2cc5c31e-423e-40b3-aeb9-6b91dca2c7d0.png)
 
 ## "Log In"
+**Light Mode:**
+![Tri3-Wireframes (2)](https://user-images.githubusercontent.com/70492417/159625776-51728952-df1d-45a6-b043-c7cad4df8535.png)
+
+**Dark Mode:**
+![Tri3-Wireframes (3)](https://user-images.githubusercontent.com/70492417/159629213-efdb0c41-d026-436d-814a-1a0eeccf228f.png)
