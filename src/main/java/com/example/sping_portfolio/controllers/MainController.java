@@ -11,6 +11,9 @@ import java.util.Objects;
 
 @Controller
 public class MainController {
-
+    @GetMapping ("/aboutTeam")
+    public String aboutTeam(Model model) {
+        return "aboutTeam";
+    }
 }
 
