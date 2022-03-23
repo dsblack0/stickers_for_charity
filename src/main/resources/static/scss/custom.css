@@ -26,10 +26,19 @@ html, body {
     background-color: var(--bg) !important;
 }
 
+h2{
+    font-family: Arial;
+    font-weight: normal;
+    font-size: 175%;
+    text-align: center;
+    text-color: var(--secondary);
+}
+
 .titlehead {
     padding: 50px 0;
     color: var(--header) !important;
     font-family: Arial;
+    text-align: center;
 }
 
 .nav-link {
@@ -37,7 +46,12 @@ html, body {
     font-family: Arial;
 }
 :hover > .nav-link {
-    color: var(--secondary);
+    color: var(--accents);
+}
+
+.info{
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 .navbar {
@@ -45,8 +59,11 @@ html, body {
 }
 
 .bodytext {
-    color: var(--secondary) !important;
     font-family: Arial;
+    font-weight: normal;
+    font-size: 125%;
+    text-align: center;
+    text-color: var(--body);
 }
 
 .frontdisplay {
