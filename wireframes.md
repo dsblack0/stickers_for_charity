@@ -27,7 +27,8 @@
 
 ## "Log In"
 **Light Mode:**
-![Tri3-Wireframes (2)](https://user-images.githubusercontent.com/70492417/159625776-51728952-df1d-45a6-b043-c7cad4df8535.png)
+![Tri3-Wireframes (2)](https://user-images.githubusercontent.com/70492417/159629287-bf33d861-e70b-43e9-8250-bed2c86f223a.png)
 
 **Dark Mode:**
-![Tri3-Wireframes (3)](https://user-images.githubusercontent.com/70492417/159629213-efdb0c41-d026-436d-814a-1a0eeccf228f.png)
+![Tri3-Wireframes (3)](https://user-images.githubusercontent.com/70492417/159629303-c7efd421-dbcb-4919-ba4d-e3866909ea6c.png)
+
