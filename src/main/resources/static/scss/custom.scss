@@ -1,89 +1,55 @@
-//LE FUNNY EZ STYLE GUIDE
-// titlehead in class - pixel font header (used for large text... or titles)
-// bodytext in class - Normal font body text (used for chunks of writing... etc)
-
 // redefine colors
-//$primary: #00eeff;
-//$secondary: #797979;
-//$body-bg: #000000;
+$header: #ed6b40;
+$accents: #ffe245;
+$primary: #f19379;
+$secondary: #f9873e;
+$body: #000000;
+$bg: #fff2a8;
+$offset: 45%;
 
-.theme-dark {
-  --primary: #3d5964 ;
-  --secondary: #376F85;
-  --body-bg: #fafefb;
-  --offset: 45%;
-}
-
-.theme-light {
-  --primary: #f19379;
-  --secondary: #ed6b40;
-  --body-bg: #000000;
-  --offset: 5%;
-}
-
-@font-face {
-  font-family: Arial;
-}
+// redefine body background
+//@import "../../../../../node_modules/bootstrap/scss/bootstrap";
 
 // setup default background
 html, body {
-  background-color: var(--body-bg) !important;
-}
-
-.titlehead {
-  color:var(--primary) !important;
-  font-family: Arial;
-
-}
-
-.nav-link{
-  color:var(--primary);
-  font-family: Arial;
-  :hover > & {
-    color: var(--secondary);
-  }
-}
-
-.navbar{
-  background-color:var(--primary);
-}
-
-.bodytext{
-  color:var(--secondary) !important;
-  font-family: Arial;
-}
-
-.frontdisplay{
-  background-image: var(--display);
-  background-position-y: var(--offset);
-  background-size: cover;
-  min-height:330px;
-  text-align: center;
-  padding: 150px 0;
+  background-image: var(--bs-gradient);
+  background-color: var(--bg);
 }
 
 // setup dark mode styling
-//.dark-mode {
-//  /* redefine theme colors */
-//  $primary: #904b6b;
-//  $secondary: #50435d;;
-//  $body-bg: #ffffff;
-//
-//  /* set background values */
-//  --#{$variable-prefix}body-bg: #{$body-bg};
-//
-//  $theme-colors: (
-//          "primary": $primary,
-//          "secondary": $secondary
-//  );
-//  /* redefine theme color variables */
-//  @each $color, $value in $theme-colors {
-//    --#{$variable-prefix}#{$color}: #{$value};
-//  }
-//  /* redefine theme theme-colors-rgb variables */
-//  $theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
-//  @each $color, $value in $theme-colors-rgb {
-//    --#{$variable-prefix}#{$color}-rgb: #{$value};
-//  }
-//
-//}
+.dark-mode {
+  $enable-gradients: true;
+
+  /* redefine theme colors */
+  $header:#00acc1;
+  $accents: #00acc1;
+  $primary: #ffffff;
+  $secondary: #85def0;
+  $body: #fafefb;
+  $bg: #3d5964;
+  $offset: 5%;
+  /* set background values */
+  --#{$variable-prefix}bg: #{$bg};
+
+  $theme-colors: (
+          "header": $header,
+          "accents": $accents,
+          "primary": $primary,
+          "secondary": $secondary,
+          "body": $body,
+          "bg": $bg,
+          "offset": $offset,
+
+  );
+  /* redefine theme color variables */
+  @each $color, $value in $theme-colors {
+    --#{$variable-prefix}#{$color}: #{$value};
+  }
+  /* redefine theme theme-colors-rgb variables */
+  //$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
+  @each $color, $value in $theme-colors-rgb {
+    --#{$variable-prefix}#{$color}-rgb: #{$value};
+  }
+
+  //@import "../../../../../node_modules/bootstrap/scss/bootstrap";
+}
