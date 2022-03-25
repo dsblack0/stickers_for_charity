@@ -5,6 +5,9 @@
 ## Project Description
 **Website Purpose:** Inform audience about the Stickers for Charity club and provide a platform for them to donate to charity through buying stickers on the website
 
+## Sponsor Presentations
+- [Week 2](https://docs.google.com/presentation/d/15eE8S6gadsTjSOaAEU70A4pq0eFdSe4asBgLAlON8TM/edit?usp=sharing)
+
 ## Requirements from SFC
 **Sponsor:** Arushi Bharadwaj (Stickers for Charity Club)
 
