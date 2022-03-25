@@ -73,7 +73,7 @@
                 win.focus();
             }
         }
-        search.addEventListener('keypress', submitted);
+       // search.addEventListener('keypress', submitted);
 
 
         function setTheme(themeName) {
@@ -81,6 +81,8 @@
             document.documentElement.className = themeName;
         }
 
+        setTheme('theme-light');
+        document.getElementById('slider').checked = true;
 
         // function to toggle between light and dark theme
         function toggleTheme() {
