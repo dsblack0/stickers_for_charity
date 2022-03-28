@@ -4,6 +4,7 @@
 
 ## Week 2
 ### SFC Club Feedback
+![image](https://user-images.githubusercontent.com/70492417/160447387-2216be4c-7092-422f-b7ea-a7a140b9c7e8.png)
 - Add Search Bar
 - Different font for overall page
      - Lighter font color on nav bar
