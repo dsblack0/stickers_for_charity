@@ -24,5 +24,9 @@ public class MainController {
 
     @GetMapping ("/events")
     public String events(Model model) {return "events";}
+
+    @GetMapping ("/CustomStickers")
+    public String CustomStickers(Model model) {return "CustomStickers";}
+
 }
 
