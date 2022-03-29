@@ -1,3 +1,5 @@
+{% include navigation.html %}
+
 **Our team will be using AWS EC2 to deploy the website, since raspberry pi can only be controlled by one member and is unstable for long amounts of time**
 
 ![image](https://user-images.githubusercontent.com/55467785/160449522-b331f59b-cb9e-44f1-8f60-fade612173d3.png)
