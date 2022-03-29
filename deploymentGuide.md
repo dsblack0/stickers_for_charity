@@ -2,6 +2,9 @@
 
 ![image](https://user-images.githubusercontent.com/55467785/160449522-b331f59b-cb9e-44f1-8f60-fade612173d3.png)
 
+**Currently, the deployment is in progress for AWS (on step 4 of 8)** 
+![image](https://user-images.githubusercontent.com/55467785/160670172-3a5d7eb0-559b-4959-96de-3b93c4d12506.png)
+
 
 ## Hosting Plan 
 ### Short term (first year): 
