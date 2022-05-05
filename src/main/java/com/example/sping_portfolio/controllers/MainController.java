@@ -22,10 +22,11 @@ public class MainController {
     @GetMapping("/donations")
     public String donations(Model model) { return "donations"; }
 
-    @GetMapping ("/aboutTeam")
-    public String aboutTeam(Model model) {return "aboutTeam";}
-
     @GetMapping ("/events")
     public String events(Model model) {return "events";}
+
+    @GetMapping ("/CustomStickers")
+    public String CustomStickers(Model model) {return "CustomStickers";}
+
 }
 

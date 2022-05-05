@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head layout:fragment="metadata" th:remove="tag">
+    <meta charset="UTF-8">
+    <title>Custom Stickers Page</title>
+    <style>
+        html, body {
+            background-image: url('https://wallpapers.com/images/high/sunset-in-snowy-ranges-rblr9s9l3ydi09gp.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div layout:fragment="content" th:remove="tag">
+        <div class="stickerForm" style="margin: 30px">
+            <h1 style="color: #fff2a8">Request Form</h1>
+            <form action="/action_page.php">
+                <label for="name">Full name:</label>
+                <input type="text" id="name" name="name"><br>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email"><br>
+                <label for="phone">Phone:</label>
+                <input type="text" id="phone" name="phone"><br><br>
+                <p>Describe the Sticker you wish to order.</p>
+                <textarea name="description" rows="10" cols="30">Description</textarea>
+                <br><br>
+                <label for="size">Sticker Size:</label>
+                <select id="size" name="size">
+                    <option value="2x2">2 in x 2 in</option>
+                    <option value="3x3">3 in x 3 in</option>
+                    <option value="4x4">4 in x 4 in</option>
+                    <option value="5x5">5 in x 5 in</option>
+                </select>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="20">
+                <br><br>
+                <input type="submit" value="Submit Request">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
