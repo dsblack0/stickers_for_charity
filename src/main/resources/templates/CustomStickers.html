@@ -11,22 +11,34 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            font-family: "Glacial Indifference Regular";
+        }
+        @font-face {
+            font-family: 'Glacial Indifference Regular';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Glacial Indifference Regular'), url('GlacialIndifference-Regular.woff') format('woff');
         }
     </style>
 </head>
 <body>
     <div layout:fragment="content" th:remove="tag">
-        <div class="stickerForm" style="margin: 30px">
-            <h1 style="color: #fff2a8">Request Form</h1>
-            <form action="/action_page.php">
-                <label for="name">Full name:</label>
-                <input type="text" id="name" name="name"><br>
-                <label for="email">Email:</label>
-                <input type="text" id="email" name="email"><br>
-                <label for="phone">Phone:</label>
-                <input type="text" id="phone" name="phone"><br><br>
+        <div class="stickerForm" style="margin: 30px; background-color: var(--primary)">
+            <form action="/action_page.php" style="margin:30px">
+                <h1 style="color: #fff2a8">Request Form</h1>
+                <div class="w3-row-padding">
+                    <div class="w3-half">
+                        <input class="w3-input w3-border" type="text" id="name" placeholder="Full Name"><br>
+                    </div>
+                    <div class="w3-half">
+                        <input class="w3-input w3-border" type="text" id="email"  placeholder="Email"><br>
+                    </div>
+                    <div class="w3-half">
+                        <input class="w3-input w3-border" type="text" id="phone" placeholder="Phone Number"><br><br>
+                    </div>
+                </div>
                 <p>Describe the Sticker you wish to order.</p>
-                <textarea name="description" rows="10" cols="30">Description</textarea>
+                <textarea name="description" rows="10" cols="50" placeholder="Description"></textarea>
                 <br><br>
                 <label for="size">Sticker Size:</label>
                 <select id="size" name="size">
