@@ -18,16 +18,16 @@
     --offset: 45%;
 }
 
-font-face {
+@font-face {
     font-family: myFirstFont;
-    src: url("static/font/glacialIndifference.ttf");
+    src: url(glacialIndifference.ttf);
 }
 
 html, body {
     background-color: var(--bg) !important;
 }
 
-h2{
+h2 {
     font-family: myFirstFont;
     font-weight: normal;
     font-size: 175%;

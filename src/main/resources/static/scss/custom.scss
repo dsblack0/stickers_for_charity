@@ -10,6 +10,12 @@ $offset: 45%;
 // redefine body background
 //@import "../../../../../node_modules/bootstrap/scss/bootstrap";
 
+
+@font-face {
+  font-family: myFirstFont;
+  src: url(glacialIndifference.ttf);
+}
+
 // setup default background
 html, body {
   background-image: var(--bs-gradient);
@@ -21,7 +27,7 @@ html, body {
   $enable-gradients: true;
 
   /* redefine theme colors */
-  $header:#00acc1;
+  $header: #00acc1;
   $accents: #00acc1;
   $primary: #ffffff;
   $secondary: #85def0;
@@ -39,12 +45,13 @@ html, body {
           "body": $body,
           "bg": $bg,
           "offset": $offset,
-
   );
+
   /* redefine theme color variables */
   @each $color, $value in $theme-colors {
     --#{$variable-prefix}#{$color}: #{$value};
   }
+
   /* redefine theme theme-colors-rgb variables */
   //$theme-colors-rgb: map-loop($theme-colors, to-rgb, "$value");
   @each $color, $value in $theme-colors-rgb {
