@@ -5,33 +5,37 @@
 <head layout:fragment="metadata" th:remove="tag">
     <meta charset="UTF-8">
     <title>Custom Stickers Page</title>
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
     <style>
         html, body {
             background-image: url('https://wallpapers.com/images/high/sunset-in-snowy-ranges-rblr9s9l3ydi09gp.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            font-family: "Glacial Indifference Regular";
+            /* font-family: "Glacial Indifference Regular"; */
+            font-family: Abel;
         }
-        @font-face {
+        /*@font-face {
             font-family: 'Glacial Indifference Regular';
             font-style: normal;
             font-weight: normal;
             src: local('Glacial Indifference Regular'), url('GlacialIndifference-Regular.woff') format('woff');
         }
+
+         */
     </style>
 </head>
 <body>
     <div layout:fragment="content" th:remove="tag">
-        <div class="stickerForm" style="margin: 30px; background-color: var(--primary)">
-            <form action="/action_page.php" style="margin:30px">
-                <h1 style="color: #fff2a8">Request Form</h1>
+        <div class="stickerForm" style="margin: 30px; background-color: var(--primary); width: 40%; padding: 40px; font-size: 20px">
+            <form1 action="/action_page.php">
+                <h1 style="color: #fff2a8">Request Form</h1><br>
                 <div class="w3-row-padding">
                     <div class="w3-half">
-                        <input class="w3-input w3-border" type="text" id="name" placeholder="Full Name"><br>
+                        <input class="w3-input w3-border" type="text" id="name" placeholder="Full Name"><br><br>
                     </div>
                     <div class="w3-half">
-                        <input class="w3-input w3-border" type="text" id="email"  placeholder="Email"><br>
+                        <input class="w3-input w3-border" type="text" id="email"  placeholder="Email"><br><br>
                     </div>
                     <div class="w3-half">
                         <input class="w3-input w3-border" type="text" id="phone" placeholder="Phone Number"><br><br>
@@ -51,7 +55,7 @@
                 <input type="number" id="quantity" name="quantity" min="1" max="20">
                 <br><br>
                 <input type="submit" value="Submit Request">
-            </form>
+            </form1>
         </div>
     </div>
 </body>
