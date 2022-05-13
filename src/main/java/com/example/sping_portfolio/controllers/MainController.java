@@ -28,5 +28,8 @@ public class MainController {
     @GetMapping ("/CustomStickers")
     public String CustomStickers(Model model) {return "CustomStickers";}
 
+    @GetMapping ("/stickerSale")
+    public String stickerSale(Model model) {return "stickerSale";}
+
 }
 
