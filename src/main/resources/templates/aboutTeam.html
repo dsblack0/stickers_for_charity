@@ -8,15 +8,45 @@
         html, body {
             background-image: url('https://images.unsplash.com/photo-1543613949-95cd1b38a10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80');
             background-position: center;
-            background-repeat: no-repeat;
+            background-repeat: repeat;
             background-size: cover;
+        }
+        .card-flip > div {
+            backface-visibility: hidden;
+            transition: transform 300ms;
+            transition-timing-function: linear;
+        }
+        .card-front {
+            transform: rotateY(0deg);
+        }
+        .card-back {
+            transform: rotateY(180deg);
+            position: absolute;
+            top: 0;
+        }
+        .card-flip:hover .card-front {
+            transform: rotateY(-180deg);
+        }
+
+        .card-flip:hover .card-back {
+            transform: rotateY(0deg);
         }
     </style>
 </div></head>
 <body><div layout:fragment="content" th:remove="tag">
     <h1 style="text-align: center; color: var(--bg); margin-top: 20px;">Meet the SFC Team!</h1>
-    <div class="member-cards" style="margin: 30px">
-
+    <div class="member-profiles" style="margin: 50px;">
+        <div class=" card card-flip" style="width: 24rem; height: 25rem; margin: 30px; background-color: var(--primary); display: inline-block;" th:each="profile : ${profileList}">
+            <div class="card-front justify-content-center align-items-center" style="text-align: center; margin-top: 2rem">
+                <img class="member-pic" th:src="@{${profile.getPicURL()}}" style="height: 21rem; align-self: center" alt="">
+                <h5 th:text="${profile.getName()}" style="color: var(--bg)"></h5>
+            </div>
+            <div class="card-back justify-content-center align-items-center" style="text-align: center; margin: 2rem">
+                <h5 th:text="${profile.getRole()}" style="color: var(--bg)"></h5>
+                <p></p>
+                <p th:text="${profile.getBioText()}" style="color:var(--bg);"></p>
+            </div>
+        </div>
     </div>
 </div>
 </body>

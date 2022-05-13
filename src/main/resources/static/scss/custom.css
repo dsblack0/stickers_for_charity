@@ -19,15 +19,16 @@
 }
 
 @font-face {
-    font-family: Arial;
+    font-family: myFirstFont;
+    src: url(glacialIndifference.ttf);
 }
 
 html, body {
     background-color: var(--bg) !important;
 }
 
-h2{
-    font-family: Arial;
+h2 {
+    font-family: myFirstFont;
     font-weight: normal;
     font-size: 175%;
     text-align: center;
@@ -37,13 +38,13 @@ h2{
 .titlehead {
     padding: 50px 0;
     color: var(--header) !important;
-    font-family: Arial;
+    font-family: myFirstFont;
     text-align: center;
 }
 
 .nav-link {
     color: var(--bg);
-    font-family: Arial;
+    font-family: myFirstFont;
 }
 :hover > .nav-link {
     color: var(--accents);
@@ -59,7 +60,7 @@ h2{
 }
 
 .bodytext {
-    font-family: Arial;
+    font-family: myFirstFont;
     font-weight: normal;
     font-size: 125%;
     text-align: center;
