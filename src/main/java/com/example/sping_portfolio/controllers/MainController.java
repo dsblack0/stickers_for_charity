@@ -31,5 +31,8 @@ public class MainController {
     @GetMapping ("/stickerSale")
     public String stickerSale(Model model) {return "stickerSale";}
 
+    @GetMapping("/login")
+    public String login(Model model) {return "login";}
+
 }
 

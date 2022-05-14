@@ -52,7 +52,7 @@
 </div></head>
 <body onload="changeCloud()"><div layout:fragment="content" th:remove="tag">
     <h1 style="text-align: center; color: var(--bg); margin-top: 20px;">Meet the SFC Team!</h1>
-    <div class="member-profiles" style="margin: 50px;">
+    <div class="member-profiles" style="margin-left: 50px;">
         <div class=" card card-flip" style="width: 24rem; height: 25rem; margin: 30px; background-color: var(--primary); display: inline-block;" th:each="profile : ${profileList}">
             <div class="card-front justify-content-center align-items-center" style="text-align: center; margin-top: 2rem">
                 <img class="member-pic" th:src="@{${profile.getPicURL()}}" style="height: 21rem; align-self: center" alt="">
