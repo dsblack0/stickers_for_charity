@@ -1,7 +1,10 @@
 package com.example.sping_portfolio.database;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-@Configuration @EnableWebSecurity
-public class SecurityConfig {
+@Configuration @EnableWebSecurity @RequiredArgsConstructor
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 }
