@@ -30,4 +30,14 @@ public class ModelRepository implements UserDetailsService {
     PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
+    @Override
+    public org.springframework.security.core.userdetails.UserDetails loadUserbyUsername(String name) throws UsernameNotFoundException {
+        Profile profile = profileJpaRepository.findByName(String name);
+        if (profile == null) {
+            throw new UsernameNotFoundException("User not found in database");
+        }
+        Collection<SimpleGrantedAuthority> authorities = new ArrayList<>();
+        return new org.springframework.security.core.userdetails.User(person.)
+    }
 }

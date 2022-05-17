@@ -13,9 +13,10 @@ import java.util.*;
 import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.FetchType.LAZY;
 
-@Data
+@Setter
+@Getter
+@ToString
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 public class Profile {
 
