@@ -1,10 +1,10 @@
 .theme-dark {
-    --header:#00acc1;
+    --header: #85def0;
     --accents: #00acc1;
-    --primary: #ffffff;
+    --primary: #3d5964;
     --secondary: #85def0;
     --body: #fafefb;
-    --bg: #3d5964;
+    --bg: #376F85;
     --offset: 5%;
 }
 
@@ -44,11 +44,11 @@ h2 {
 }
 
 .nav-link {
-    color: var(--bg);
+    color: var(--accents);
     font-family: myFirstFont;
 }
 :hover > .nav-link {
-    color: var(--accents);
+    color: var(--header);
 }
 
 .info{
