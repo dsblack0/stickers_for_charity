@@ -36,12 +36,24 @@ public class EventsController implements Serializable {
         ArrayList<EventsController> eventsList = new ArrayList<>();
 
         EventsController event1 = new EventsController();
-        event1.detailsCreate("OVMS Creative Arts Club meeting", "05/06/21", "Taught members of the OVMS Creative Arts Club about character drawing.");
+        event1.detailsCreate("Perspective Drawing Workshop", "04/12/21, 04/14/21, and 04/16/21", "Organized a workshop to teach kids about perspective drawing. Workshop included a mini-lesson about perspective drawing and live instruction to guide the kids to sketch and color their own perspective drawing.");
         eventsList.add(event1);
 
         EventsController event2 = new EventsController();
-        event1.detailsCreate("OVMS Creative Arts Club meeting", "05/06/21", "");
+        event1.detailsCreate("Comic Drawing Workshop", "04/12/21, 04/14/21, and 04/16/21", "Organized a workshop to teach kids about comics. Each workshop day included a mini-lesson about comics and live instruction to guide the kids to sketch and color their own drawings. The sub-topics for each day were backgrounds, cartoons, and coloring.");
         eventsList.add(event2);
+
+        EventsController event3 = new EventsController();
+        event1.detailsCreate("The A.C.E. Club Collab", "05/05/21", "Drew a drawing that inspires people to reach out and help each other out and submitted it to The A.C.E. Club, so they could use it to promote their club’s message about mental health.");
+        eventsList.add(event3);
+
+        EventsController event4 = new EventsController();
+        event1.detailsCreate("Feeding America Fundraiser", "12/20/21 to 1/27/22", "Drew winter themed sticker designs and sold at Monterey Ridge, Baskin Robbins, Sprouts, and Stone Ranch. Also had an online Google Form to place orders. All proceeds went to Feeding America.");
+        eventsList.add(event4);
+
+        EventsController event5 = new EventsController();
+        event1.detailsCreate("OVMS Creative Arts Club Meeting", "05/06/21", "Taught membersr drawing.");
+        eventsList.add(event5);
 
         model.addAttribute("eventList", eventsList);
 
