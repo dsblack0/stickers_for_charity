@@ -22,14 +22,17 @@ public class MainController {
     @GetMapping("/donations")
     public String donations(Model model) { return "donations"; }
 
-    @GetMapping ("/events")
-    public String events(Model model) {return "events";}
+    @GetMapping ("/reviews")
+    public String reviews(Model model) {return "reviews";}
 
     @GetMapping ("/CustomStickers")
     public String CustomStickers(Model model) {return "CustomStickers";}
 
     @GetMapping ("/stickerSale")
     public String stickerSale(Model model) {return "stickerSale";}
+
+    @GetMapping("/login")
+    public String login(Model model) {return "login";}
 
 }
 
