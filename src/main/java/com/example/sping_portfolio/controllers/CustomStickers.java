@@ -30,10 +30,22 @@ public class CustomStickers {
                 .header("X-RapidAPI-Host", "rapidprod-sendgrid-v1.p.rapidapi.com")
                 .header("X-RapidAPI-Key", "5160560674msh71fe7bcad890509p159e0ajsnc0f73e8a4ad9")
                 .method("POST", HttpRequest.BodyPublishers.ofString
-                        ("{\r\n    \"personalizations\": [\r\n        {\r\n            \"to\": [\r\n                {\r\n                    \"email\": \"kkutti@outlook.com\"\r\n                }\r\n            ],\r\n            \"subject\": \"Hello, World!\"\r\n        }\r\n    ],\r\n    \"from\": {\r\n        \"email\": \"from_address@example.com\"\r\n    },\r\n    \"content\": [\r\n        {\r\n            \"type\": \"text/plain\",\r\n            \"value\": \"Hello, World!\"\r\n        }\r\n    ]\r\n}"))
+                        ("{" +
+                                "\"personalizations\": [ " +
+                                "{\"to\": [ {\"email\": \"kkutti@outlook.com\"}]," +
+                                "\"subject\": \"Custom Sticker Order from "+ name + "\"}]," +
+                                "\"from\": {\"email\": \"from_address@example.com\"}," +
+                                "\"content\": [{" +
+                                    "\"type\": \"text/plain\"," +
+                                    "\"value\": \"Full Name: " + name +
+                                                " Email: " + email +
+                                                " Phone #: " + phone +
+                                                " Description: " + description + "\"}]}"))
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println(response.body());
+        System.out.println(response);
+        System.out.println(request);
 
         model.addAttribute("name", name);
         model.addAttribute("email", email);
