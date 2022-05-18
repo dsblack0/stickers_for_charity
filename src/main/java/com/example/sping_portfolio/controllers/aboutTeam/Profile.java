@@ -1,17 +1,12 @@
 package com.example.sping_portfolio.controllers.aboutTeam;
 
-import org.springframework.format.annotation.DateTimeFormat;
 import lombok.*;
 
-import javax.persistence.*;
-import javax.validation.constraints.*;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.ZoneId;
-import java.util.*;
-
-import static javax.persistence.FetchType.EAGER;
-import static javax.persistence.FetchType.LAZY;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.validation.constraints.Size;
 
 @Setter
 @Getter

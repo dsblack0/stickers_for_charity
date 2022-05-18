@@ -1,4 +1,4 @@
-package com.example.sping_portfolio.controllers;
+/*package com.example.sping_portfolio.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -66,4 +66,4 @@ public class aboutTeamOld implements Serializable {
 
         return "aboutTeam/aboutTeam";
     }
-}
+}*/

@@ -13,7 +13,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-public class ProfileController implements WebMvcConfigurer {
+public class ProfileMvcController implements WebMvcConfigurer {
 
     @Autowired
     private ProfileSqlRepository repository;
@@ -22,43 +22,42 @@ public class ProfileController implements WebMvcConfigurer {
     public String profile(Model model) {
         List<Profile> list = repository.listAll();
         model.addAttribute("list", list);
-        return "aboutTeam";
+        return "aboutTeam/aboutTeam";
     }
 
     @GetMapping("/aboutTeamCreate")
     public String profileAdd(Profile profile) {
-        return "/aboutTeamCreate";
+        return "aboutTeam/aboutTeamCreate";
     }
 
     @PostMapping("/aboutTeamCreate")
     public String profileSave(@Valid Profile profile, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "/aboutTeamEdit";
+            return "aboutTeam/aboutTeamEdit";
         }
         repository.save(profile);
-        return "redirect:aboutTeam";
+        return "redirect:aboutTeam/aboutTeam";
     }
 
     @GetMapping ("/aboutTeamEdit/{id}")
     public String aboutTeamEdit(@PathVariable("id") int id, Model model) {
         model.addAttribute("profile", repository.get(id));
-        return "aboutTeamEdit";
+        return "aboutTeam/aboutTeamEdit";
     }
     @PostMapping("/aboutTeamEdit")
     public String aboutTeamEdit(@Valid Profile profile, BindingResult bindingResult) {
-        // Validation of Decorated PersonForm attributes
         if (bindingResult.hasErrors()) {
-            return "/aboutTeamEdit";
+            return "aboutTeam/aboutTeamEdit";
         }
         repository.save(profile);
         // Redirect to next step
-        return "redirect:/aboutTeam";
+        return "redirect:aboutTeam/aboutTeam";
     }
 
     @GetMapping("/aboutTeamDelete/{id}")
-    public String personDelete(@PathVariable("id") long id) {
+    public String profileDelete(@PathVariable("id") long id) {
         repository.delete(id);
-        return "redirect:/aboutTeam";
+        return "redirect:aboutTeam/aboutTeam";
     }
 
     @RequestMapping(value = "/api/aboutTeam/get")
@@ -66,17 +65,11 @@ public class ProfileController implements WebMvcConfigurer {
         return new ResponseEntity<>( repository.listAll(), HttpStatus.OK);
     }
 
-    /*
-    GET individual Person using ID
-     */
     @RequestMapping(value = "/api/aboutTeam/get/{id}")
     public ResponseEntity<Profile> getProfile(@PathVariable long id) {
         return new ResponseEntity<>( repository.get(id), HttpStatus.OK);
     }
 
-    /*
-    DELETE individual Person using ID
-     */
     @RequestMapping(value = "/api/aboutTeam/delete/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<Object> deleteProfile(@PathVariable long id) {
         repository.delete(id);
@@ -88,7 +81,7 @@ public class ProfileController implements WebMvcConfigurer {
     POST Aa record by Requesting Parameters from URI
      */
     @RequestMapping(value = "/api/aboutTeam/post", method = RequestMethod.POST)
-    public ResponseEntity<Object> postPerson(@RequestParam("name") String name,
+    public ResponseEntity<Object> postProfile(@RequestParam("name") String name,
                                              @RequestParam("role") String role,
                                              @RequestParam("bioText") String bioText) {
 

@@ -8,7 +8,7 @@ import java.util.List;
 
 @Service
 @Transactional
-public class    ProfileSqlRepository {
+public class ProfileSqlRepository {
 
     @Autowired
     private ProfileJpaRepository jpa;
