@@ -11,7 +11,7 @@ import java.util.Objects;
 
 @Controller
 public class MainController {
-    @GetMapping("/home")
+    @GetMapping("/")
     public String home(Model model) {
         return "index";
     }
@@ -25,16 +25,13 @@ public class MainController {
     @GetMapping ("/reviews")
     public String reviews(Model model) {return "reviews";}
 
-    @GetMapping ("/CustomStickers")
-    public String CustomStickers(Model model) {return "CustomStickers";}
-
     /*
     @GetMapping ("/stickerSale")
     public String stickerSale(Model model) {return "stickerSale";}
      */
 
-    @GetMapping("/login")
-    public String login(Model model) {return "login";}
+    @GetMapping ("/login")
+    public String Login(Model model) {return "login";}
 
 }
 
