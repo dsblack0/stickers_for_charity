@@ -25,8 +25,10 @@ public class MainController {
     @GetMapping ("/reviews")
     public String reviews(Model model) {return "reviews";}
 
+    /*
     @GetMapping ("/stickerSale")
     public String stickerSale(Model model) {return "stickerSale";}
+     */
 
     @GetMapping("/login")
     public String login(Model model) {return "login";}
