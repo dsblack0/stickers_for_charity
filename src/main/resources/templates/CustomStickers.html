@@ -5,15 +5,15 @@
 <head layout:fragment="metadata" th:remove="tag">
     <meta charset="UTF-8">
     <title>Custom Stickers Page</title>
-
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
     <style>
         html, body {
             background-image: url('https://wallpapers.com/images/high/sunset-in-snowy-ranges-rblr9s9l3ydi09gp.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            background-attachment: fixed;
             /* font-family: "Glacial Indifference Regular"; */
+            font-family: Abel;
         }
         /*@font-face {
             font-family: 'Glacial Indifference Regular';
@@ -27,22 +27,22 @@
 </head>
 <body>
     <div layout:fragment="content" th:remove="tag">
-        <div class="stickerForm" style="margin: 30px; background-color: var(--primary); width: 40%; padding: 40px">
-            <form method="GET" action="/CustomStickers" id="stickerOrder">
+        <div class="stickerForm" style="margin: 30px; background-color: var(--primary); width: 40%; padding: 40px; font-size: 20px">
+            <form1 action="/action_page.php">
                 <h1 style="color: #fff2a8">Request Form</h1><br>
                 <div class="w3-row-padding">
                     <div class="w3-half">
-                        <input class="w3-input w3-border" type="text" name="name" id="name" placeholder="Full Name"><br><br>
+                        <input class="w3-input w3-border" type="text" id="name" placeholder="Full Name"><br><br>
                     </div>
                     <div class="w3-half">
-                        <input class="w3-input w3-border" type="email" name="email" id="email"  placeholder="Email"><br><br>
+                        <input class="w3-input w3-border" type="text" id="email"  placeholder="Email"><br><br>
                     </div>
                     <div class="w3-half">
-                        <input class="w3-input w3-border" type="text" name="phone" id="phone" placeholder="Phone Number"><br><br>
+                        <input class="w3-input w3-border" type="text" id="phone" placeholder="Phone Number"><br><br>
                     </div>
                 </div>
                 <p>Describe the Sticker you wish to order.</p>
-                <textarea name="description" id="description" rows="10" cols="50" placeholder="Description"></textarea>
+                <textarea name="description" rows="10" cols="50" placeholder="Description"></textarea>
                 <br><br>
                 <label for="size">Sticker Size:</label>
                 <select id="size" name="size">
@@ -55,8 +55,7 @@
                 <input type="number" id="quantity" name="quantity" min="1" max="20">
                 <br><br>
                 <input type="submit" value="Submit Request">
-            </form>
-            <?php echo $_POST["name"]; ?><br>
+            </form1>
         </div>
     </div>
 </body>
