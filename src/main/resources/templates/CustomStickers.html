@@ -18,7 +18,14 @@
         input[type=text], input[type=email], textarea, select, input[type=number] {
             border: none;
             background-color: var(--secondary);
+            /* Causes problems in dark mode, b/c text not visible against background */
             color: var(--header);
+        }
+        input[type=submit]{
+            border: var(--secondary);
+            background-color: var(--header);
+            /* Causes problems in dark mode, b/c text not visible against background */
+            color: var(--secondary);
         }
     </style>
 </head>
