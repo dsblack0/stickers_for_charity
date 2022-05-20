@@ -20,15 +20,15 @@ public class Profile {
     private Long id;
 
     @NonNull
-    @Size(min=2, max = 40, message = "Name (2 to 40 chars)")
+    @Size(min=2, max = 30, message = "Name (2 to 30 chars)")
     private String name;
 
     @NonNull
-    @Size(min=2, max = 40, message = "Name (2 to 40 chars)")
+    @Size(min=2, max = 30, message = "Name (2 to 30 chars)")
     private String role;
 
     @NonNull
-    @Size(min=2, max = 40, message = "Name (2 to 40 chars)")
+    @Size(min=2, max = 500, message = "Name (2 to 500 chars)")
     private String bioText;
 
     public Profile(String name, String role, String bioText) {

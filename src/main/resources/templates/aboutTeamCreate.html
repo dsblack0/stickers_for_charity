@@ -50,7 +50,7 @@
 <body><div layout:fragment="content" th:remove="tag">
     <h1 style="text-align: center; color: var(--bg); margin-top: 20px;">Edit About the Team Information</h1>
     <div class="edit-box justify-content-center align-items-center">
-        <form class="form-inline" action="#" th:action="@{/aboutTeam/aboutTeamCreate}" th:object="${profile}" method="POST">
+        <form class="form-inline" action="#" th:action="@{aboutTeamCreate}" th:object="${profile}" method="POST">
             <div class="form-group mb-2 mr-sm-2">
                 <label for="name">Name:</label>
                 <input type="text" th:field="*{name}" id="name">
@@ -71,8 +71,8 @@
                 <input type="file" th:field="*{pic}" id="pic">
                 <small th:if="${#fields.hasErrors('pic')}" th:errors="*{pic}">Picture Error</small>
             </div> -->
+            <p><button type="submit" class="btn btn-primary">ADD</button></p>
         </form>
-        <p><button type="submit" class="btn btn-primary">ADD</button></p>
     </div>
 </div>
 </body>

@@ -1,5 +1,7 @@
-package com.example.sping_portfolio.controllers.aboutTeam;
+package com.example.sping_portfolio.controllers;
 
+import com.example.sping_portfolio.controllers.aboutTeam.Profile;
+import com.example.sping_portfolio.controllers.aboutTeam.ProfileSqlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +15,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @Controller
-public class ProfileMvcController implements WebMvcConfigurer {
+public class ProfileSqlMvcController implements WebMvcConfigurer {
 
     @Autowired
     private ProfileSqlRepository repository;
@@ -22,36 +24,36 @@ public class ProfileMvcController implements WebMvcConfigurer {
     public String profile(Model model) {
         List<Profile> list = repository.listAll();
         model.addAttribute("list", list);
-        return "aboutTeam/aboutTeam";
+        return "/aboutTeam";
     }
 
     @GetMapping("/aboutTeamCreate")
     public String profileAdd(Profile profile) {
-        return "aboutTeam/aboutTeamCreate";
+        return "/aboutTeamCreate";
     }
 
     @PostMapping("/aboutTeamCreate")
     public String profileSave(@Valid Profile profile, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "aboutTeam/aboutTeamEdit";
+            return "/aboutTeamCreate";
         }
         repository.save(profile);
-        return "redirect:aboutTeam/aboutTeam";
+        return "redirect:/aboutTeam";
     }
 
     @GetMapping ("/aboutTeamEdit/{id}")
-    public String aboutTeamEdit(@PathVariable("id") int id, Model model) {
+    public String profileEdit(@PathVariable("id") int id, Model model) {
         model.addAttribute("profile", repository.get(id));
-        return "aboutTeam/aboutTeamEdit";
+        return "/aboutTeamEdit";
     }
     @PostMapping("/aboutTeamEdit")
-    public String aboutTeamEdit(@Valid Profile profile, BindingResult bindingResult) {
+    public String profileEditSave(@Valid Profile profile, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return "aboutTeam/aboutTeamEdit";
+            return "/aboutTeamEdit";
         }
         repository.save(profile);
         // Redirect to next step
-        return "redirect:aboutTeam/aboutTeam";
+        return "redirect:/aboutTeam";
     }
 
     @GetMapping("/aboutTeamDelete/{id}")
