@@ -25,8 +25,6 @@ public class MainController {
     @GetMapping ("/reviews")
     public String reviews(Model model) {return "reviews";}
 
-    @GetMapping ("/CustomStickers")
-    public String CustomStickers(Model model) {return "CustomStickers";}
 
     /*
     @GetMapping ("/stickerSale")
