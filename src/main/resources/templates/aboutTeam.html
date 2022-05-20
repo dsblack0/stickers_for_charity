@@ -56,12 +56,12 @@
         <div class=" card card-flip" style="width: 24rem; height: 25rem; margin: 30px; background-color: var(--primary); display: inline-block;" th:each="profile : ${profileList}">
             <div class="card-front justify-content-center align-items-center" style="text-align: center; margin-top: 2rem">
                 <img class="member-pic" th:src="@{${profile.getPicURL()}}" style="height: 21rem; align-self: center" alt="">
-                <h5 th:text="${profile.getName()}" style="color: var(--accents)"></h5>
+                <h5 th:text="${profile.getName()}" style="color: var(--body)"></h5>
             </div>
             <div class="card-back justify-content-center align-items-center" style="text-align: center; margin: 2rem">
-                <h5 th:text="${profile.getRole()}" style="color: var(--accents)"></h5>
+                <h5 th:text="${profile.getRole()}" style="color: var(--body)"></h5>
                 <p></p>
-                <p th:text="${profile.getBioText()}" style="color:var(--accents);"></p>
+                <p th:text="${profile.getBioText()}" style="color:var(--body);"></p>
             </div>
         </div>
     </div>
