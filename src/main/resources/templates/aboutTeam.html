@@ -8,7 +8,8 @@
         html, body {
             background-image: url('https://images.unsplash.com/photo-1543613949-95cd1b38a10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80');
             background-position: center;
-            background-repeat: repeat;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             background-size: cover;
         }
         .card-flip > div {
@@ -31,22 +32,43 @@
         .card-flip:hover .card-back {
             transform: rotateY(0deg);
         }
+
     </style>
+    <script>
+        var myVar;
+        function changeCloud(){
+            var cloud = document.getElementById('cloud');
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                cloud.src = "/images/dark-cloud.png"
+            } else {
+                cloud.src = "/images/light-cloud.png"
+            }
+            myVar = setTimeout(changeCloud, 500);
+        }
+        $(document).ready(function(){
+            changeCloud();
+        });
+    </script>
 </div></head>
-<body><div layout:fragment="content" th:remove="tag">
-    <h1 style="text-align: center; color: var(--bg); margin-top: 20px;">Meet the SFC Team!</h1>
-    <div class="member-profiles" style="margin: 50px;">
+<body onload="changeCloud()"><div layout:fragment="content" th:remove="tag">
+    <h1 class="titlehead">Meet the SFC Team!</h1>
+    <div class="member-profiles" style="margin-left: 50px;">
         <div class=" card card-flip" style="width: 24rem; height: 25rem; margin: 30px; background-color: var(--primary); display: inline-block;" th:each="profile : ${profileList}">
             <div class="card-front justify-content-center align-items-center" style="text-align: center; margin-top: 2rem">
                 <img class="member-pic" th:src="@{${profile.getPicURL()}}" style="height: 21rem; align-self: center" alt="">
-                <h5 th:text="${profile.getName()}" style="color: var(--bg)"></h5>
+                <h5 th:text="${profile.getName()}" style="color: var(--body)"></h5>
             </div>
             <div class="card-back justify-content-center align-items-center" style="text-align: center; margin: 2rem">
-                <h5 th:text="${profile.getRole()}" style="color: var(--bg)"></h5>
+                <h5 th:text="${profile.getRole()}" style="color: var(--body)"></h5>
                 <p></p>
-                <p th:text="${profile.getBioText()}" style="color:var(--bg);"></p>
+                <p th:text="${profile.getBioText()}" style="color:var(--body);"></p>
             </div>
         </div>
+    </div>
+    <div class="contact justify-content-center align-items-center" style="text-align: center; margin-top: 2rem; position: relative">
+        <a href="https://www.instagram.com/stickersfor_charity/"><img class="instagram" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/800px-Instagram_logo_2016.svg.png" alt="" style="width: 5rem; position: absolute; align-self: center; margin-top: 5%; margin-left: 40%"></a>
+        <a href="mailto:stikersforcharity@gmail.com"><img class="email" src="https://cdn.iconscout.com/icon/free/png-256/apple-mail-493152.png" alt="" style="width: 5rem; position: absolute; align-self: center; margin-top: 5%; margin-left: 50%"></a>
+        <img class="cloud" id="cloud" src="/images/light-cloud.png" alt="" style="align-self: center; width: 90%;">
     </div>
 </div>
 </body>
