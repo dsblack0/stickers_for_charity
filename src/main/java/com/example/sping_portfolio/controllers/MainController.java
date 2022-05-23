@@ -34,5 +34,11 @@ public class MainController {
     @GetMapping("/login")
     public String login(Model model) {return "login";}
 
+    @GetMapping("/database/person")
+    public String person(Model model) {return "database/person";}
+
+    @GetMapping("/database/personcreate")
+    public String personCreate(Model model) {return "/database/personcreate";}
+
 }
 
