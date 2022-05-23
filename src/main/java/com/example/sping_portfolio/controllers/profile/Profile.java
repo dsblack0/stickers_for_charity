@@ -1,4 +1,4 @@
-package com.example.sping_portfolio.controllers.aboutTeam;
+package com.example.sping_portfolio.controllers.profile;
 
 import lombok.*;
 

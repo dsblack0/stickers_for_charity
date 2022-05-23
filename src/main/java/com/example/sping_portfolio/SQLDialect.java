@@ -1,4 +1,4 @@
-package com.example.sping_portfolio.controllers.aboutTeam;
+package com.example.sping_portfolio;
 
 import org.hibernate.dialect.Dialect;
 import org.hibernate.dialect.function.SQLFunctionTemplate;

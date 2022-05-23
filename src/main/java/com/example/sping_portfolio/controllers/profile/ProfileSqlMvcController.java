@@ -1,7 +1,5 @@
-package com.example.sping_portfolio.controllers;
+package com.example.sping_portfolio.controllers.profile;
 
-import com.example.sping_portfolio.controllers.aboutTeam.Profile;
-import com.example.sping_portfolio.controllers.aboutTeam.ProfileSqlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

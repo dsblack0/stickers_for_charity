@@ -1,4 +1,4 @@
-package com.example.sping_portfolio.controllers.aboutTeam;
+package com.example.sping_portfolio.controllers.profile;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
