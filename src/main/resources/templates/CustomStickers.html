@@ -16,22 +16,27 @@
             /* font-family: "Glacial Indifference Regular"; */
         }
         input[type=text], input[type=email], textarea, select, input[type=number] {
+            padding: 3px;
             border: none;
             background-color: var(--secondary);
             /* Causes problems in dark mode, b/c text not visible against background */
             color: var(--header);
+            border-radius: 3px;
         }
         input[type=submit]{
-            border: var(--secondary);
+            padding: 7px;
+            border-width: 3px;
+            border-color: var(--secondary);
             background-color: var(--header);
             /* Causes problems in dark mode, b/c text not visible against background */
             color: var(--secondary);
+            border-radius: 3px;
         }
     </style>
 </head>
 <body>
     <div layout:fragment="content" th:remove="tag">
-        <div class="stickerForm" style="margin: 30px; background-color: var(--primary); width: 40%; padding: 40px">
+        <div class="stickerForm" style="margin: 30px; background-color: var(--primary); width: 40%; padding: 40px; border-radius: 20px" >
             <form method="GET" action="/CustomStickers" id="stickerOrder">
                 <h1 style="color:var(--secondary)">Request Form</h1><br>
                 <div class="w3-row-padding", style="color: var(--secondary)">
@@ -56,7 +61,7 @@
                     <option value="5x5">5 in x 5 in</option>
                 </select>
                 <label for="quantity", style="color: var(--secondary)">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" max="20">
+                <input type="number" id="quantity" name="quantity" min="1" max="20" placeholder="0">
                 <br><br>
                 <input type="submit" value="Submit Request">
             </form>
