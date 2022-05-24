@@ -31,7 +31,7 @@ public class stickerSale implements Serializable {
 
     public String getInfo() { return info; }
 
-    public double getPrice() { return price; }
+    public String getPrice() { return "$" + price + "0"; }
 
     public String getPictURL() { return pictURL; }
 

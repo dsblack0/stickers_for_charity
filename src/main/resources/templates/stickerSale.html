@@ -17,54 +17,69 @@
         .card-deck {
             width: 18rem;
             height: 36rem;
-            margin: 30px;
+            margin: 20px;
             display: inline-block;
-            transition: width 2s, height 2s;
-        }
-
-        .card-body h4 {
-            display:none;
+            transition: width 1s, height 1s;
         }
 
         .card-deck:hover {
-            width: 24rem;
-            height: 100rem;
-            margin: 30px;
+            width: 22rem;
+            height: 40rem;
+            margin: 20px;
             display: inline-block;
         }
 
-        .card-deck:hover .card-body h4 {
-            display:inline;
+        .card-img-top {
+            width: 16rem;
+            height: 18rem;
+            object-fit:cover;
+            transition: width 1s, height 1s;
         }
 
-</style>
+        .card-deck:hover .card-img-top {
+            width: 18rem;
+            height: 20rem;
+            object-fit:cover;
+        }
+
+        .card-deck button {
+            background-color: var(--primary);
+            display:none;
+        }
+
+        .card-deck:hover button {
+            display:inline
+        }
+    </style>
+
+    <script>
+
+    </script>
 
 </div></head>
 
 <body><div layout:fragment="content" th:remove="tag">
     <!-- Start of body content specific to page -->
-    <div class="content" style="margin-left: 5%; margin-right: 5%;">
+    <div class="center" style="margin-left: 9%; margin-right: 9%">
         <h1 class="titlehead">Sticker Sale</h1>
-        <div class="card-deck" th:each="sticker : ${stickerList}">
+        <div class="card-deck" th:each="sticker : ${stickerList}" style="justify-content:center">
             <div class="card shadow-sm">
-                <img class="card-img-top" th:src="@{${sticker.getPictURL()}}" style="width: 16rem; height: 18rem; object-fit:cover" alt="Card image cap">
-                <div class="card-body" style="background-color: var(--primary);">
+                <img class="card-img-top" th:src="@{${sticker.getPictURL()}}" alt="Card image cap">
+                <div class="card-body" style="background-color: var(--primary); text-align:center">
                     <h5 th:text="${sticker.getStickName()}" class="card-title"></h5>
                     <h6 th:text="${sticker.getPrice()}" class="card-subtitle mb-2 text-muted"></h6>
                     <p th:text="${sticker.getInfo()}" class="card-text"></p>
-                    <h4>test</h4>
+                    <p><button onClick="popUp()">Order Now</button></p>
                 </div>
             </div>
-
-        <script>
-            ScrollReveal().reveal('.info', {
-                interval: 16,
-                reset: true,
-                useDelay: 'onload'
-            })
-        </script>
         </div>
     </div>
+
+    <!-- <div class="container" id="popup-opened">
+        <div class="popup">
+            <p>test</p>
+        </div>
+    </div> -->
 </div>
 </body>
 
