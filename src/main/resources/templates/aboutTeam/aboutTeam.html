@@ -51,17 +51,22 @@
     </script>
 </div></head>
 <body onload="changeCloud()"><div layout:fragment="content" th:remove="tag">
-    <h1 class="titlehead">Meet the SFC Team!</h1>
+    <h1 style="text-align: center; color: var(--bg); margin-top: 20px;">Meet the SFC Team!</h1>
+    <p><a href="/aboutTeamCreate/" style="text-align: center; color: var(--bg);">Add Profile</a></p>
     <div class="member-profiles" style="margin-left: 50px;">
-        <div class=" card card-flip" style="width: 24rem; height: 25rem; margin: 30px; background-color: var(--primary); display: inline-block;" th:each="profile : ${profileList}">
+        <div class=" card card-flip" style="width: 24rem; height: 25rem; margin: 30px; background-color: var(--primary); display: inline-block;" th:each="profile : ${list}">
             <div class="card-front justify-content-center align-items-center" style="text-align: center; margin-top: 2rem">
-                <img class="member-pic" th:src="@{${profile.getPicURL()}}" style="height: 21rem; align-self: center" alt="">
-                <h5 th:text="${profile.getName()}" style="color: var(--body)"></h5>
+                <!--<img class="member-pic" th:src="@{${profile.getPicURL()}}" style="height: 21rem; align-self: center" alt=""> -->
+                <h5 th:text="${profile.name}" style="color: var(--accents)"></h5>
             </div>
             <div class="card-back justify-content-center align-items-center" style="text-align: center; margin: 2rem">
-                <h5 th:text="${profile.getRole()}" style="color: var(--body)"></h5>
+                <h5 th:text="${profile.role}" style="color: var(--accents)"></h5>
                 <p></p>
-                <p th:text="${profile.getBioText()}" style="color:var(--body);"></p>
+                <p th:text="${profile.bioText}" style="color:var(--accents);"></p>
+                <p>
+                    <a th:href="@{/aboutTeamEdit/{id}(id = ${profile.id})}" style="color:var(--accents);">Edit</a>
+                    <a th:href="@{/aboutTeamDelete/{id}(id = ${profile.id})}" style="color: var(--accents)">Delete</a>
+                </p>
             </div>
         </div>
     </div>

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+<head><div layout:fragment="metadata" th:remove="tag">
+    <title>About the Team - Edit Profile</title>
+    <style>
+        html, body {
+            background-image: url('https://images.unsplash.com/photo-1543613949-95cd1b38a10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .edit-box {
+            background-color: var(--primary);
+            margin: 50px 250px;
+            border-radius: 25px;
+            text-align: center;
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+        }
+        input {
+            background-color: var(--bg);
+            border: 1px solid var(--bg);
+            border-radius: 4px;
+            width: 50%;
+            margin-top: 2rem;
+            height: 2.5rem;
+            padding: 12px 20px;
+
+        }
+        ::placeholder {
+            color: var(--header);
+            font-size: large;
+        }
+        button {
+            background-color: var(--header);
+            color: var(--bg);
+            font-weight: bold;
+            font-size: large;
+            border: 1px solid var(--bg);
+            border-radius: 4px;
+            margin-top: 2rem;
+            text-align: center;
+            width: 15%;
+            padding: 3px 0;
+        }
+    </style>
+</div></head>
+<body><div layout:fragment="content" th:remove="tag">
+    <h1 style="text-align: center; color: var(--bg); margin-top: 20px;">Edit About the Team Information</h1>
+    <div class="edit-box justify-content-center align-items-center">
+        <form class="form-inline" action="#" th:action="@{/aboutTeamEdit}" th:object="${profile}" method="POST">
+            <div class="form-group mb-2 mr-sm-2">
+                <input type="hidden" th:field="*{id}" readonly="readonly">
+            </div>
+            <div class="form-group mb-2 mr-sm-2">
+                <label for="name">Name:</label>
+                <textarea type="text" th:field="*{name}" id="name"/>
+                <small th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</small>
+            </div>
+            <div class="form-group mb-2 mr-sm-2">
+                <label for="role">Role:</label>
+                <textarea type="text" th:field="*{role}" id="role"/>
+                <small th:if="${#fields.hasErrors('role')}" th:errors="*{role}">Role Error</small>
+            </div>
+            <div class="form-group mb-2 mr-sm-2">
+                <label for="bioText">Bio:</label>
+                <textarea type="text" th:field="*{bioText}" id="bioText"/>
+                <small th:if="${#fields.hasErrors('bioText')}" th:errors="*{bioText}">Bio Text Error</small>
+            </div>
+            <!--<div class="form-group mb-2 mr-sm-2">
+                <label for="pic">Upload Picture:</label>
+
+                <small th:if="${#fields.hasErrors('pic')}" th:errors="*{pic}">Picture Error</small>
+            </div> -->
+            <p><button type="submit" class="btn btn-primary">SAVE</button></p>
+        </form>
+    </div>
+</div>
+</body>
+</html>
