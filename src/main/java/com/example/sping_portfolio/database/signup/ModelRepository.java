@@ -1,4 +1,4 @@
-package com.example.sping_portfolio.database;
+package com.example.sping_portfolio.database.signup;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
