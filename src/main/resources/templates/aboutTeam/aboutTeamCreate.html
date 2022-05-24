@@ -11,7 +11,7 @@
       background-attachment: fixed;
       background-size: cover;
     }
-    .edit-box {
+    .create-box {
       background-color: var(--primary);
       margin: 50px 250px;
       border-radius: 25px;
@@ -19,9 +19,9 @@
       padding-bottom: 2rem;
       padding-top: 2rem;
     }
-    input {
-      background-color: var(--bg);
-      border: 1px solid var(--bg);
+    input, textarea {
+      background-color: var(--secondary);
+      border: 1px solid var(--secondary);
       border-radius: 4px;
       width: 50%;
       margin-top: 2rem;
@@ -35,10 +35,10 @@
     }
     button {
       background-color: var(--header);
-      color: var(--bg);
+      color: var(--secondary);
       font-weight: bold;
       font-size: large;
-      border: 1px solid var(--bg);
+      border: 1px solid var(--secondary);
       border-radius: 4px;
       margin-top: 2rem;
       text-align: center;
@@ -48,30 +48,24 @@
   </style>
 </div></head>
 <body><div layout:fragment="content" th:remove="tag">
-  <h1 style="text-align: center; color: var(--bg); margin-top: 20px;">Edit About the Team Information</h1>
-  <div class="edit-box justify-content-center align-items-center">
-    <form class="form-inline" action="#" th:action="@{/aboutTeamCreate}" th:object="${profile}" method="POST">
-      <div class="form-group mb-2 mr-sm-2">
-        <label for="name">Name:</label>
-        <input type="text" th:field="*{name}" id="name">
+  <h1 style="text-align: center; color: var(--secondary); margin-top: 20px;">About the Team</h1>
+  <div class="create-box justify-content-center align-items-center">
+    <h3 style="color: var(--secondary)">Create Profile</h3>
+    <form class="form" action="#" th:action="@{/aboutTeamCreate}" th:object="${profile}" method="POST">
+      <div class="create-form justify-content-center align-items-center">
+        <input type="text" th:field="*{name}" id="name" placeholder="Name">
         <small th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</small>
-      </div>
-      <div class="form-group mb-2 mr-sm-2">
-        <label for="role">Role:</label>
-        <input type="text" th:field="*{role}" id="role">
+        <input type="text" th:field="*{role}" id="role" placeholder="Role">
         <small th:if="${#fields.hasErrors('role')}" th:errors="*{role}">Role Error</small>
-      </div>
-      <div class="form-group mb-2 mr-sm-2">
-        <label for="bioText">Bio:</label>
-        <input type="text" th:field="*{bioText}" id="bioText">
+        <p><textarea th:field="*{bioText}" id="bioText" placeholder="Member Bio" style="height: 10rem;"></textarea></p>
         <small th:if="${#fields.hasErrors('bioText')}" th:errors="*{bioText}">Bio Text Error</small>
+        <p><button type="submit">ADD</button></p>
       </div>
       <!--<div class="form-group mb-2 mr-sm-2">
           <label for="pic">Upload Picture:</label>
           <input type="file" th:field="*{pic}" id="pic">
           <small th:if="${#fields.hasErrors('pic')}" th:errors="*{pic}">Picture Error</small>
       </div> -->
-      <p><button type="submit" class="btn btn-primary">ADD</button></p>
     </form>
   </div>
 </div>
