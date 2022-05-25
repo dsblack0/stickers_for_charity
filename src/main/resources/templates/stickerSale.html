@@ -5,40 +5,81 @@
 
 <head><div layout:fragment="metadata" th:remove="tag">
     <title>Sticker Sale</title>
-</div></head>
 
-<style>
-    html, body {
-        background-image: url('https://images.unsplash.com/photo-1543613949-95cd1b38a10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-    }
-</style>
+    <style>
+        html, body {
+            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/dbc92472-c02c-4c52-943c-88c8387d1a1a/d3gfc15-82c820d4-efc5-4388-85a0-7521b20a8b29.jpg/v1/fill/w_720,h_480,q_75,strp/orange_clouds__blue_sky_by_newnham2013_d3gfc15-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDgwIiwicGF0aCI6IlwvZlwvZGJjOTI0NzItYzAyYy00YzUyLTk0M2MtODhjODM4N2QxYTFhXC9kM2dmYzE1LTgyYzgyMGQ0LWVmYzUtNDM4OC04NWEwLTc1MjFiMjBhOGIyOS5qcGciLCJ3aWR0aCI6Ijw9NzIwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.04A58M0a0_vkkLWwLTVOaXRktuhV5uS6PmglAc7liOA');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .card-deck {
+            width: 18rem;
+            height: 36rem;
+            margin: 20px;
+            display: inline-block;
+            transition: width 1s, height 1s;
+        }
+
+        .card-deck:hover {
+            width: 22rem;
+            height: 40rem;
+            margin: 20px;
+            display: inline-block;
+        }
+
+        .card-img-top {
+            width: 16rem;
+            height: 18rem;
+            object-fit:cover;
+            transition: width 1s, height 1s;
+        }
+
+        .card-deck:hover .card-img-top {
+            width: 18rem;
+            height: 20rem;
+            object-fit:cover;
+        }
+
+        .card-deck button {
+            background-color: var(--primary);
+            display:none;
+        }
+
+        .card-deck:hover button {
+            display:inline
+        }
+    </style>
+
+    <script>
+
+    </script>
+
+</div></head>
 
 <body><div layout:fragment="content" th:remove="tag">
     <!-- Start of body content specific to page -->
-    <div class="content" style="margin-left: 10%; margin-right: 10%;">
+    <div class="center" style="margin-left: 9%; margin-right: 9%">
         <h1 class="titlehead">Sticker Sale</h1>
-        <div class="card-deck" th:each="sticker : ${stickerList}" style="width: 18rem; height: 36rem; margin: 30px; display: inline-block;">
+        <div class="card-deck" th:each="sticker : ${stickerList}" style="justify-content:center">
             <div class="card shadow-sm">
-                <img class="card-img-top" th:src="@{${sticker.getPictURL()}}" style="width: 16rem; height: 18rem; object-fit:cover" alt="Card image cap">
-                <div class="card-body" style="background-color: var(--primary);">
+                <img class="card-img-top" th:src="@{${sticker.getPictURL()}}" alt="Card image cap">
+                <div class="card-body" style="background-color: var(--primary); text-align:center">
                     <h5 th:text="${sticker.getStickName()}" class="card-title"></h5>
                     <h6 th:text="${sticker.getPrice()}" class="card-subtitle mb-2 text-muted"></h6>
                     <p th:text="${sticker.getInfo()}" class="card-text"></p>
+                    <p><button onClick="popUp()">Order Now</button></p>
                 </div>
             </div>
-        <script>
-            ScrollReveal().reveal('.info', {
-                interval: 16,
-                reset: true,
-                useDelay: 'onload'
-            })
-        </script>
         </div>
     </div>
+
+    <!-- <div class="container" id="popup-opened">
+        <div class="popup">
+            <p>test</p>
+        </div>
+    </div> -->
 </div>
 </body>
 
