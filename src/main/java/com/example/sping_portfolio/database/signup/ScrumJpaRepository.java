@@ -1,6 +1,5 @@
-package com.example.sping_portfolio.database;
+package com.example.sping_portfolio.database.signup;
 
-import com.example.sping_portfolio.database.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

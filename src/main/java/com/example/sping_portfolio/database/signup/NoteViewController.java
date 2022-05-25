@@ -1,7 +1,5 @@
-package com.example.sping_portfolio.database;
+package com.example.sping_portfolio.database.signup;
 
-import com.example.sping_portfolio.database.ModelRepository;
-import com.example.sping_portfolio.database.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

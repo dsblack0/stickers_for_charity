@@ -1,7 +1,5 @@
-package com.example.sping_portfolio.database;
+package com.example.sping_portfolio.database.signup;
 
-import com.example.sping_portfolio.database.Role;
-import com.example.sping_portfolio.database.RoleJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
