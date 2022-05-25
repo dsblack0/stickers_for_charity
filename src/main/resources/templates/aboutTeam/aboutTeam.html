@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head><div layout:fragment="metadata" th:remove="tag">
+    <title>About the Team</title>
+    <style>
+        html, body {
+            background-image: url('https://images.unsplash.com/photo-1543613949-95cd1b38a10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .card-flip > div {
+            backface-visibility: hidden;
+            transition: transform 300ms;
+            transition-timing-function: linear;
+        }
+        .card-front {
+            transform: rotateY(0deg);
+        }
+        .card-back {
+            transform: rotateY(180deg);
+            position: absolute;
+            top: 0;
+        }
+        .card-flip:hover .card-front {
+            transform: rotateY(-180deg);
+        }
+
+        .card-flip:hover .card-back {
+            transform: rotateY(0deg);
+        }
+
+    </style>
+    <script>
+        var myVar;
+        function changeCloud(){
+            var cloud = document.getElementById('cloud');
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                cloud.src = "/images/dark-cloud.png"
+            } else {
+                cloud.src = "/images/light-cloud.png"
+            }
+            myVar = setTimeout(changeCloud, 500);
+        }
+        $(document).ready(function(){
+            changeCloud();
+        });
+    </script>
+</div></head>
+<body onload="changeCloud()"><div layout:fragment="content" th:remove="tag">
+    <h1 style="text-align: center; color: var(--secondary); margin-top: 20px;">Meet the SFC Team!</h1>
+    <p style="text-align: center;"><a href="/aboutTeamCreate" style="color: var(--header); font-size: x-large">Add Profile</a></p>
+    <div class="member-profiles" style="margin-left: 50px;">
+        <div class=" card card-flip" style="width: 24rem; height: 25rem; margin: 30px; background-color: var(--primary); display: inline-block;" th:each="profile : ${list}">
+            <div class="card-front justify-content-center align-items-center" style="text-align: center; margin-top: 2rem">
+                <!--<img class="member-pic" th:src="@{${profile.getPicURL()}}" style="height: 21rem; align-self: center" alt=""> -->
+                <h5 th:text="${profile.name}" style="color: var(--secondary)"></h5>
+            </div>
+            <div class="card-back justify-content-center align-items-center" style="text-align: center; margin: 2rem">
+                <h5 th:text="${profile.role}" style="color: var(--secondary)"></h5>
+                <p></p>
+                <p th:text="${profile.bioText}" style="color:var(--secondary);"></p>
+                <p style="margin-top: 10px;">
+                    <a th:href="@{/aboutTeamEdit/{id}(id = ${profile.id})}" style="color:var(--secondary);">Edit</a>
+                    <a th:href="@{/aboutTeamDelete/{id}(id = ${profile.id})}" style="color: var(--secondary)">Delete</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="contact justify-content-center align-items-center" style="text-align: center; margin-top: 2rem; position: relative">
+        <a href="https://www.instagram.com/stickersfor_charity/"><img class="instagram" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/800px-Instagram_logo_2016.svg.png" alt="" style="width: 5rem; position: absolute; align-self: center; margin-top: 5%; margin-left: 40%"></a>
+        <a href="mailto:stikersforcharity@gmail.com"><img class="email" src="https://cdn.iconscout.com/icon/free/png-256/apple-mail-493152.png" alt="" style="width: 5rem; position: absolute; align-self: center; margin-top: 5%; margin-left: 50%"></a>
+        <img class="cloud" id="cloud" src="/images/light-cloud.png" alt="" style="align-self: center; width: 90%;">
+    </div>
+</div>
+</body>
+</html>
