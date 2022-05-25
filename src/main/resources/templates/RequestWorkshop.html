@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}" lang="en">
-
 <head layout:fragment="metadata" th:remove="tag">
     <meta charset="UTF-8">
-    <title>Custom Stickers Page</title>
+    <title>Request Workshop</title>
 
     <style>
         html, body {
@@ -15,7 +14,7 @@
             background-attachment: fixed;
             /* font-family: "Glacial Indifference Regular"; */
         }
-        input[type=text], input[type=email], textarea, select, input[type=number] {
+        input[type=text], input[type=email], textarea, select, input[type=checkbox] {
             padding: 3px;
             border: none;
             background-color: var(--secondary);
@@ -54,15 +53,20 @@
                 <p style="color: var(--secondary)">Describe the Sticker you wish to order.</p>
                 <textarea name="description" id="description" rows="10" cols="50" placeholder="Description"></textarea>
                 <br><br>
-                <label for="size", style="color: var(--secondary)">Sticker Size:</label>
-                <select id="size" name="size">
-                    <option value="2x2">2 in x 2 in</option>
-                    <option value="3x3">3 in x 3 in</option>
-                    <option value="4x4">4 in x 4 in</option>
-                    <option value="5x5">5 in x 5 in</option>
-                </select>
-                <label for="quantity", style="color: var(--secondary)">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" max="20" placeholder="0">
+                <form>
+                    <p style="color: var(--secondary)">Which age groups should this workshop cater to?</p>
+                    <input type="checkbox" id="lowElementary" name="lowElementary" value="Preschool - 2nd Grade">
+                    <label for="lowElementary" style="color:var(--secondary)">Preschool - 2nd Grade</label><br>
+                    <input type="checkbox" id="highElementary" name="highElementary" value="3rd Grade - 5th Grade">
+                    <label for="highElementary" style="color:var(--secondary)">3rd Grade - 5th Grade</label><br>
+                    <input type="checkbox" id="middle" name="middle" value="6th Grade - 8th Grade">
+                    <label for="middle" style="color:var(--secondary)">6th Grade - 8th Grade</label><br>
+                    <input type="checkbox" id="high" name="high" value="9th Grade - 12th Grade">
+                    <label for="high" style="color:var(--secondary)">9th Grade - 12th Grade</label><br>
+                </form>
+                <br>
+                <p style="color: var(--secondary)">Any preference for dates or times of this workshop?</p>
+                <textarea name="date" id="date" rows="5" cols="50" placeholder="Date or Time?"></textarea>
                 <br><br>
                 <input type="submit" value="Submit Request">
             </form>
