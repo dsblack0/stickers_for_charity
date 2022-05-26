@@ -31,7 +31,7 @@ public class stickerSale implements Serializable {
 
     public String getInfo() { return info; }
 
-    public double getPrice() { return price; }
+    public String getPrice() { return "$" + price + "0"; }
 
     public String getPictURL() { return pictURL; }
 
@@ -44,15 +44,24 @@ public class stickerSale implements Serializable {
     public String stickerSale(Model model) {
         ArrayList<stickerSale> stickerList = new ArrayList<>();
 
-        stickerSale sticker1 = new stickerSale();
-        sticker1.addSticker("Koala", "Help support and protect animals caught in the Australian wildfires!", 5.00, "/images/KoalaSticker.tif");
-        stickerList.add(sticker1);
         stickerSale sticker2 = new stickerSale();
-        sticker1.addSticker("Acacia tree", "Help support and protect animals caught in the Australian wildfires!", 5.00, "/images/IMG_5047.PNG");
+        sticker2.addSticker("Acacia tree", "Help support and protect animals caught in the Australian wildfires!", 5.00, "/images/IMG_5047.PNG");
         stickerList.add(sticker2);
         stickerSale sticker3 = new stickerSale();
-        sticker1.addSticker("Porcupine", "Help support and protect animals caught in the Australian wildfires!", 5.00, "/images/IMG_5048.PNG");
+        sticker3.addSticker("Porcupine", "Help support and protect animals caught in the Australian wildfires!", 5.00, "/images/IMG_5048.PNG");
         stickerList.add(sticker3);
+        stickerSale sticker4 = new stickerSale();
+        sticker4.addSticker("Kiwi", "Help support and protect animals caught in the Australian wildfires!", 5.00, "/images/IMG_5049.PNG");
+        stickerList.add(sticker4);
+        stickerSale sticker5 = new stickerSale();
+        sticker5.addSticker("Spider Flower", "Help support and protect animals caught in the Australian wildfires!", 5.00, "/images/Spider Flower Sticker.jpeg");
+        stickerList.add(sticker5);
+        stickerSale sticker6 = new stickerSale();
+        sticker6.addSticker("Dingo", "Help support and protect animals caught in the Australian wildfires!", 5.00, "/images/Untitled95.png");
+        stickerList.add(sticker6);
+        stickerSale sticker7 = new stickerSale();
+        sticker7.addSticker("Crocodile", "Help support and protect animals caught in the Australian wildfires!", 5.00, "/images/Untitled96.png");
+        stickerList.add(sticker7);
 
         model.addAttribute("stickerList", stickerList);
 

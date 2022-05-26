@@ -21,8 +21,8 @@
             padding-top: 2rem;
         }
         input {
-           background-color: var(--bg);
-           border: 1px solid var(--bg);
+           background-color: var(--secondary);
+           border: 1px solid var(--secondary);
            border-radius: 4px;
            width: 50%;
            margin-top: 2rem;
@@ -36,10 +36,10 @@
         }
         button {
             background-color: var(--header);
-            color: var(--bg);
+            color: var(--secondary);
             font-weight: bold;
             font-size: large;
-            border: 1px solid var(--bg);
+            border: 1px solid var(--secondary);
             border-radius: 4px;
             margin-top: 2rem;
             text-align: center;
@@ -49,9 +49,9 @@
     </style>
 </div></head>
 <body><div layout:fragment="content" th:remove="tag">
-    <h1 class="titlehead">Club Login</h1>
+    <h1 style=" text-align: center; color: var(--secondary); margin-top: 20px;">Club Login</h1>
     <div class="login-box justify-content-center align-items-center">
-        <h3 style="color: var(--accents)">Authorized Club Access Only</h3>
+        <h3 style="color: var(--secondary)">Authorized Club Access Only</h3>
         <input name="username" id="username" placeholder="Username">
         <input type="password" name="password" id="password" placeholder="Password">
         <p><button>LOGIN</button></p>

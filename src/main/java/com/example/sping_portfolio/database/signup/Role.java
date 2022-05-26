@@ -1,4 +1,4 @@
-package com.example.sping_portfolio.database;
+package com.example.sping_portfolio.database.signup;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
