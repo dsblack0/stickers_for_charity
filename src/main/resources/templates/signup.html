@@ -5,32 +5,67 @@
 
     <div layout:fragment="metadata" th:remove="tag">
         <title>Sign Up</title>
+        <style>
+            html, body {
+                background-image: url('https://wallpapercave.com/wp/wp6944529.jpg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            .signup-box {
+                background-color: var(--primary);
+                margin: 50px 250px;
+                border-radius: 25px;
+                text-align: center;
+                padding-bottom: 2rem;
+                padding-top: 2rem;
+            }
+            input {
+                background-color: var(--secondary);
+                border: 1px solid var(--secondary);
+                border-radius: 4px;
+                width: 50%;
+                margin-top: 2rem;
+                height: 2.5rem;
+                padding: 12px 20px;
+
+            }
+            ::placeholder {
+                color: var(--header);
+                font-size: large;
+            }
+            button {
+                background-color: var(--header);
+                color: var(--secondary);
+                font-weight: bold;
+                font-size: large;
+                border: 1px solid var(--secondary);
+                border-radius: 4px;
+                margin-top: 2rem;
+                text-align: center;
+                width: 15%;
+                padding: 3px 0;
+            }
+        </style>
     </div>
 
     <div layout:fragment="content" th:remove="tag">
-        <h1 class="titlehead">Sign Up</h1>
+        <h1 style=" text-align: center; color: var(--secondary); margin-top: 20px;">Sign Up</h1>
         <br>
-        <br>
-        <div class="container bg-secondary py-4">
-            <div class="p-5 mb-4 bg-light text-dark rounded-3">
+        <div class="signup-box justify-content-center align-items-center">
                 <form name="f" th:action="@{/signup}" method="POST">
-                    <table>
-                        <tr th:if="${param.error}" class="alert alert-error">
-                            Invalid username and password.
-                        </tr>
-                        <tr th:if="${param.logout}" class="alert alert-success">
-                            You have been logged out.
-                        </tr>
-                        <!-- 'email' is mapped to 'username' for Spring Security -->
-                        <tr><th><label for="username">Email</label></th></tr>
-                        <tr><td><input type="email" id='username' name="username" size="20" required></td></tr>
-                        <tr><th><label for="password">Password</label></th></tr>
-                        <tr><td><input type="password" id="password" name="password" size="20" required></td></tr>
-                        <tr><td><a th:href="@{/personcreate}" class="btn btn-primary">Sign Up</a></td></tr>
-
-                    </table>
+                    <!-- 'email' is mapped to 'username' for Spring Security -->
+                    <input type="email" id='username' name="username" size="20" placeholder="Email" required>
+                    <input type="password" id="password" name="password" size="20" placeholder="Password" required>
+                    <p th:href="@{/personcreate}"><button>Sign Up</button></p>
+                    <p th:if="${param.error}" class="alert alert-error">
+                        Invalid username and password.
+                    </p>
+                    <p th:if="${param.logout}" class="alert alert-success">
+                        You have been logged out.
+                    </p>
                 </form>
-            </div>
         </div>
     </div>
 </html>
