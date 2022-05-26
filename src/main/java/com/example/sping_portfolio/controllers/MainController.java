@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
+    private ArrayList<Reviews> reviewList = new ArrayList<Reviews>();
+
     @GetMapping("/home")
     public String home(Model model) {
         return "index";
@@ -25,7 +27,19 @@ public class MainController {
     public String donations(Model model) { return "donations"; }
 
     @GetMapping ("/reviews")
-    public String reviews(Model model) {return "reviews";}
+    public String reviews(Model model) {
+        model.addAttribute("reviewList", reviewList);
+        return "reviews";
+    }
+
+    @GetMapping ("/reviewscreate")
+    public String reviewscreate(@RequestParam(name="name", required=false, defaultValue="Bob") String name,
+                                @RequestParam(name="rating", required=false, defaultValue="Awesome!") String rating,
+                                Model model) {
+        Reviews review = new Reviews();
+        review.createReview(name, rating);
+        reviewList.add(review);
+        return "redirect:/reviews";}
 
     @GetMapping("/login")
     public String login(Model model) {return "login";}
