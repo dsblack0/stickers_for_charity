@@ -4,13 +4,54 @@
       layout:decorate="~{layout}" lang="en">
 
 <div layout:fragment="metadata" th:remove="tag">
-    <title>Sign Up</title>
+    <title>Donations</title>
+    <style>
+        html, body {
+            background-image: url('https://wallpapercave.com/wp/wp6944529.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .login-box {
+            background-color: var(--primary);
+            margin: 50px 250px;
+            border-radius: 25px;
+            text-align: center;
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+        }
+        input {
+            background-color: var(--secondary);
+            border: 1px solid var(--secondary);
+            border-radius: 4px;
+            width: 50%;
+            margin-top: 2rem;
+            height: 2.5rem;
+            padding: 12px 20px;
+
+        }
+        ::placeholder {
+            color: var(--header);
+            font-size: large;
+        }
+        button {
+            background-color: var(--header);
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: large;
+            border: 1px solid var(--secondary);
+            border-radius: 4px;
+            margin-top: 2rem;
+            text-align: center;
+            width: 15%;
+            padding: 3px 0;
+        }
+    </style>
 </div>
 
 <div layout:fragment="content" th:remove="tag">
     <h1 class="titlehead">Donate</h1>
-
-    <br>
     <br>
     <form>
         <div class="form-group">
@@ -18,7 +59,7 @@
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
-        <a href="#" class="btn btn-primary">Donate</a>
+        <a href="#">Donate</a>
     </form>
 </div>
 </html>
