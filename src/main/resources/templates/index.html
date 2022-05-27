@@ -5,6 +5,11 @@
 
 <head><div layout:fragment="metadata" th:remove="tag">
     <title>Home</title>
+    <style>
+        html, body {
+            background: var(--bg);
+        }
+    </style>
 </div></head>
 
 <body><div layout:fragment="content" th:remove="tag">
@@ -44,7 +49,7 @@
                 </a>
             </div>
         </div>
-        <h1 class="titlehead">Welcome to Stickers for Charity!</h1>
+        <h1 style="text-align: center; color: var(--header); margin-top: 20px; font-size: 60px">Welcome to Stickers for Charity!</h1>
         <br>
         <div class="info">
             <h2>Who are we?</h2>
