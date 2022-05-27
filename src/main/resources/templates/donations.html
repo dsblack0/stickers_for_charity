@@ -7,13 +7,12 @@
     <title>Donations</title>
     <style>
         html, body {
-            background-image: url('https://wallpapercave.com/wp/wp6944529.jpg');
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
         }
-        .login-box {
+        .donate-box {
             background-color: var(--primary);
             margin: 50px 250px;
             border-radius: 25px;
@@ -50,16 +49,17 @@
     </style>
 </div>
 
-<div layout:fragment="content" th:remove="tag">
+<body><div layout:fragment="content" th:remove="tag">
     <h1 class="titlehead">Donate</h1>
-    <br>
+    <div class="donate-box">
     <form>
         <div class="form-group">
-            <label for="exampleInputEmail1">Enter amount in $USD</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <input type="number"  id="amount" placeholder="Enter amount in $USD">
+            <input type="email"  id="email" placeholder="Enter email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
-        <a href="#">Donate</a>
+        <a href="#"><button>Donate</button></a>
     </form>
-</div>
+    </div>
+</div></body>
 </html>
