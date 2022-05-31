@@ -26,7 +26,7 @@
 }
 
 html, body {
-    background: var(--display);
+    background: var(--display); !important;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
