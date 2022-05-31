@@ -41,6 +41,22 @@ public class MainController {
         reviewList.add(review);
         return "redirect:/reviews";}
 
+    /*@GetMapping ("/reviewsupdate")
+    public String reviewsupdate(@RequestParam(name="newrating", required=false, defaultValue="Cool!") String newrating,
+                                Model model) {
+        if (newrating != "") {
+            Reviews review = new Reviews();
+            review.updateReview(newrating);
+            return "redirect:/reviews";
+        }
+        return "reviewsupdate";}*/
+
+    /*@GetMapping ("/reviewsdelete")
+    public String reviewsdelete() {
+        Reviews review = new Reviews();
+        review.deleteReview();
+        return "redirect:/reviews";}*/
+
     @GetMapping("/login")
     public String login(Model model) {return "login";}
 
