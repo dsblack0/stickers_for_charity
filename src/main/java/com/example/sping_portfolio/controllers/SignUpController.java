@@ -1,8 +1,9 @@
-package com.example.sping_portfolio.database.signup;
+package com.example.sping_portfolio.controllers;
 
 //import com.nighthawk.csa.mvc.database.ModelRepository;
 //import com.nighthawk.csa.mvc.database.person.Person;
 
+import com.example.sping_portfolio.database.signup.ModelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,23 +16,38 @@ import java.util.List;
 // Built using article: https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html
 // or similar: https://asbnotebook.com/2020/04/11/spring-boot-thymeleaf-form-validation-example/
 @Controller
-public class PersonViewController {
+public class SignUpController {
     // Autowired enables Control to connect HTML and POJO Object to database easily for CRUD
     @Autowired
     private ModelRepository repository;
 
-    @GetMapping("/database/person")
+    @PostMapping("/signupAction")
+    public String checkAndRegisterPerson(@Valid Person person, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "signup";
+        }
+        repository.save(person);
+        repository.addRoleToPerson(person.getEmail(), "Club_Member");
+        return "redirect:/signupsuccess";
+    }
+
+    @GetMapping("/signupsuccess")
+    public String signupSuccess(Model model) {
+        return "signupsuccess";
+    }
+
+    @GetMapping("/person")
     public String person(Model model) {
         List<Person> list = repository.listAll();
         model.addAttribute("list", list);
-        return "mvc/database/person";
+        return "person";
     }
 
     /*  The HTML template Forms and PersonForm attributes are bound
         @return - template for person form
         @param - Person Class
     */
-    @GetMapping("/database/personcreate")
+    @GetMapping("/personcreate")
     public String personAdd(Person person) {
         return "mvc/database/personcreate";
     }
@@ -40,7 +56,7 @@ public class PersonViewController {
     @param - Person object with @Valid
     @param - BindingResult object
      */
-    @PostMapping("/database/personcreate")
+    @PostMapping("/personcreate")
     public String personSave(@Valid Person person, BindingResult bindingResult) {
         // Validation of Decorated PersonForm attributes
         if (bindingResult.hasErrors()) {

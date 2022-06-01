@@ -1,5 +1,6 @@
-package com.example.sping_portfolio.database.signup;
+package com.example.sping_portfolio.controllers;
 
+import com.example.sping_portfolio.database.signup.Role;
 import org.springframework.format.annotation.DateTimeFormat;
 import lombok.*;
 
@@ -8,11 +9,10 @@ import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
+import java.util.*;
 
 import static javax.persistence.FetchType.EAGER;
+import static javax.persistence.FetchType.LAZY;
 
 /*
 Person is a POJO, Plain Old Java Object.
@@ -21,11 +21,9 @@ First set of annotations add functionality to POJO
 The last annotation connect to database
 --- @Entity
  */
-@Setter
-@Getter
-@ToString
+@Data
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Person {
     // automatic unique identifier for Person record
