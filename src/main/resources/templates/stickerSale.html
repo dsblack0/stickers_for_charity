@@ -50,41 +50,10 @@
         .card-deck:hover button {
             display:inline
         }
-
-        .popup-form {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -50%);
-            justify-content: center;
-            text-align: center;
-        }
-
-        .form-container {
-            max-width: 40rem;
-            padding: 10px;
-            background-color: var(--primary);
-            border-radius: 10px;
-        }
-
-        .form-container input[type=text] {
-            width:100%;
-            padding: 15px;
-            margin: 5px 0 22px 0;
-            bordern: none;
-            background: #fff2a8;
-        }
     </style>
-    <script>
-        function popUp() {
-            document.getElementById("orderForm").style.display="block";
-        }
 
-        function closePop() {
-            document.getElementById("orderForm").style.display="none";
-        }
+    <script>
+
     </script>
 
 </div></head>
@@ -93,9 +62,8 @@
     <!-- Start of body content specific to page -->
     <div class="center" style="margin-left: 9%; margin-right: 9%">
         <h1 class="titlehead">Sticker Sale</h1>
-
         <div class="card-deck" th:each="sticker : ${stickerList}" style="justify-content:center">
-            <div class="card shadow-sm" style="border-radius: 10px">
+            <div class="card shadow-sm">
                 <img class="card-img-top" th:src="@{${sticker.getPictURL()}}" alt="Card image cap">
                 <div class="card-body" style="background-color: var(--primary); text-align:center">
                     <h5 th:text="${sticker.getStickName()}" class="card-title"></h5>
@@ -107,12 +75,10 @@
         </div>
     </div>
 
-    <!-- <div class="popup-form" id="orderForm">
-        <form class="form-container">
-            <label for="emailadd">Email</label>
-            <input id="emailadd" type="text" placeholder="Enter Email" name="email" required>
-            <p><button onClick="closePop()">Cancel</button></p>
-        </form>
+    <!-- <div class="container" id="popup-opened">
+        <div class="popup">
+            <p>test</p>
+        </div>
     </div> -->
 </div>
 </body>
