@@ -4,13 +4,10 @@ import com.example.sping_portfolio.database.signup.SignUp;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.ArrayList;
+import java.util.Objects;
 
 @Controller
 public class MainController {
@@ -33,35 +30,7 @@ public class MainController {
     public String donations(Model model) { return "donations"; }
 
     @GetMapping ("/reviews")
-    public String reviews(Model model) {
-        model.addAttribute("reviewList", reviewList);
-        return "reviews";
-    }
-
-    @GetMapping ("/reviewscreate")
-    public String reviewscreate(@RequestParam(name="name", required=false, defaultValue="Bob") String name,
-                                @RequestParam(name="rating", required=false, defaultValue="Awesome!") String rating,
-                                Model model) {
-        Reviews review = new Reviews();
-        review.createReview(name, rating);
-        reviewList.add(review);
-        return "redirect:/reviews";}
-
-    /*@GetMapping ("/reviewsupdate")
-    public String reviewsupdate(@RequestParam(name="newrating", required=false, defaultValue="Cool!") String newrating,
-                                Model model) {
-        if (newrating != "") {
-            Reviews review = new Reviews();
-            review.updateReview(newrating);
-            return "redirect:/reviews";
-        }
-        return "reviewsupdate";}*/
-
-    /*@GetMapping ("/reviewsdelete")
-    public String reviewsdelete() {
-        Reviews review = new Reviews();
-        review.deleteReview();
-        return "redirect:/reviews";}*/
+    public String reviews(Model model) {return "reviews";}
 
     @GetMapping("/login")
     public String login(Model model) {return "login";}

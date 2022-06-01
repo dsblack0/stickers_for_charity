@@ -1,5 +1,4 @@
 .theme-dark {
-    --title: #85def0;
     --header: #376f85;
     --accents: #00acc1;
     --primary: #3d5964;
@@ -7,11 +6,9 @@
     --body: #fafefb;
     --bg: #376F85;
     --offset: 5%;
-    --display: url("https://wallpapercave.com/wp/wp6944529.jpg");
 }
 
 .theme-light {
-    --title: #ed6b40;
     --header: #ed6b40;
     --accents: #ffe245;
     --primary: #f19379;
@@ -19,7 +16,6 @@
     --body: #000000;
     --bg: #fff2a8;
     --offset: 45%;
-    --display: url("https://images.unsplash.com/photo-1543613949-95cd1b38a10e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8");
 }
 
 @font-face {
@@ -28,11 +24,7 @@
 }
 
 html, body {
-    background: var(--display); !important;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    background-color: var(--bg) !important;
     font-family: myFirstFont;
 }
 
@@ -41,13 +33,14 @@ h2 {
     font-weight: normal;
     font-size: 175%;
     text-align: center;
-    color: var(--title);
+    text-color: var(--secondary);
 }
 
 .titlehead {
+    padding: 50px 0;
+    color: var(--header) !important;
+    font-family: myFirstFont;
     text-align: center;
-    color: var(--secondary);
-    margin-top: 20px;
 }
 
 .nav-link {
@@ -72,7 +65,7 @@ h2 {
     font-weight: normal;
     font-size: 125%;
     text-align: center;
-    color: var(--body);
+    text-color: var(--body);
 }
 
 .frontdisplay {

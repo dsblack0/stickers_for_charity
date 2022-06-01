@@ -1,11 +1,9 @@
 package com.example.sping_portfolio.database.profile;
 
 import lombok.*;
+import org.springframework.web.multipart.MultipartFile;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Size;
 
 @Setter
@@ -31,10 +29,14 @@ public class Profile {
     @Size(min=2, max = 500, message = "Name (2 to 500 chars)")
     private String bioText;
 
-    public Profile(String name, String role, String bioText) {
+    @NonNull
+    private String picFile;
+
+    public Profile(String name, String role, String bioText, String picFile) {
         this.name = name;
         this.role = role;
         this.bioText = bioText;
+        this.picFile = picFile;
     }
 
 
