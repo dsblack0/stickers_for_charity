@@ -3,6 +3,7 @@ package com.example.sping_portfolio.database.signup;
 import java.io.Serializable;
 
 public class SignUp implements Serializable {
+    String fullname;
     String email;
     String password;
 
@@ -18,5 +19,9 @@ public class SignUp implements Serializable {
 
     public String getPassword() {
         return password;
+    }
+
+    public static boolean validateSignUpInputs(String fullname, String email, String password, String passwordagain) {
+        return false; // for now
     }
 }

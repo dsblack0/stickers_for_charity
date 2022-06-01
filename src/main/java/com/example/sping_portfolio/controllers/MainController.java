@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
-    private ArrayList<SignUp> memberList = new ArrayList<>();
+    private String signUpErrorMessage = "";
     private ArrayList<Reviews> reviewList = new ArrayList<Reviews>();
 
     @GetMapping("/home")
@@ -23,7 +23,15 @@ public class MainController {
     }
 
     @GetMapping("/signup")
-    public String signup(Model model) {
+    public String signup(@RequestParam(name="fullname", required=true) String fullname,
+                         @RequestParam(name="email", required=true) String email,
+                         @RequestParam(name="password", required=true) String password,
+                         @RequestParam(name="passwordagain", required=true) String passwordagain,
+                         Model model) {
+        //model.addAttribute("signUpErrorMessage", "Sorry, cannot sign you up.");
+        if(! SignUp.validateSignUpInputs(fullname, email, password, passwordagain)) {
+            model.addAttribute("signUpErrorMessage", "Sorry, cannot sign you up.");
+        }
         return "signup";
     }
 
@@ -66,7 +74,7 @@ public class MainController {
 
     @GetMapping("/person")
     public String person(Model model) {
-        model.addAttribute("memberList", memberList);
+        //model.addAttribute("memberList", memberList);
         return "person";
     }
 
@@ -76,8 +84,9 @@ public class MainController {
                                 Model model) {
         SignUp member = new SignUp();
         member.createMember(email, password);
-        memberList.add(member);
-        return "redirect:/person";}
+        //memberList.add(member);
+        return "redirect:/person";
+    }
 
     @GetMapping("/personupdate")
     public String personupdate(Model model) {return "personupdate";}
