@@ -17,18 +17,17 @@ public class ModelInit {
             // Fail safe data validations
 
             // make sure Role database is populated with defaults
-            String[] roles = {"ROLE_STUDENT", "ROLE_TEACHER", "ROLE_ADMIN", "ROLE_TESTER"};
+            String[] roles = {"CLUB_MEMBER", "CLUB_ADMIN"};
             for (String role : roles) {
                 if (roleJpaRepository.findByName(role) == null)
                     roleJpaRepository.save(new Role(null, role));
             }
 
             // make sure every record added has a Default encrypted password and ROLE_STUDENT
-            modelRepository.defaults("123querty", "ROLE_STUDENT");
+            modelRepository.defaults("password", "CLUB_MEMBER");
 
             // make sure privileged roles exist for Teacher
-            modelRepository.addRoleToPerson("jmort1021@gmail.com", "ROLE_TEACHER");
-            modelRepository.addRoleToPerson("jmort1021@gmail.com", "ROLE_ADMIN");
+            modelRepository.addRoleToPerson("sfc_admin", "CLUB_ADMIN");
 
             // review/validate/test by performing output to console
             System.out.println(modelRepository.listAll());

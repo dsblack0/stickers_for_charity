@@ -5,119 +5,54 @@
 <head><div layout:fragment="metadata" th:remove="tag">
     <!-- Start of head content specific to page -->
     <title>Reviews</title>
-    <style>
-        .login-box {
-            background-color: var(--primary);
-            margin: 50px 250px;
-            border-radius: 25px;
-            text-align: center;
-            padding-bottom: 2rem;
-            padding-top: 2rem;
-        }
-        input {
-            background-color: var(--bg);
-            border: 1px solid var(--bg);
-            border-radius: 4px;
-            width: 50%;
-            margin-top: 2rem;
-            height: 2.5rem;
-            padding: 12px 20px;
-
-        }
-        ::placeholder {
-            color: var(--header);
-            font-size: large;
-        }
-        button {
-            background-color: var(--header);
-            color: var(--secondary);
-            font-weight: bold;
-            font-size: large;
-            border: 1px solid var(--secondary);
-            border-radius: 4px;
-            margin-top: 2rem;
-            text-align: center;
-            width: 15%;
-            padding: 3px 0;
-        }
-    </style>
     <!-- End of head content specific to page -->
 </div></head>
 
 <body><div layout:fragment="content" th:remove="tag">
     <!-- Start of body content specific to page -->
     <div class="content" style="margin-left: 15%; margin-right: 15%;">
-            <h1 class="titlehead">Reviews</h1>
-            <form class="form" role="form" action="/reviewscreate">
-                <div class="form-group mx-sm-3 mb-2">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="enter name">
+        <h1 class="titlehead">Reviews</h1>
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col">
+                <div class="card shadow-sm" style="background-color: var(--primary)">
+                    <div class="card-body" style="background-color: var(--primary)">
+                        <h6 class="card-text" style="color: var(--accents);">Billy</h6>
+                        <p class="card-text" style="color: var(--body);">These stickers are epic!</p>
+                        <a href="/" class="card-link">Update</a>
+                        <a href="/" class="card-link">Delete</a>
+                    </div>
                 </div>
-                <div class="form-group mx-sm-3 mb-2">
-                    <textarea type="text" class="form-control" id="rating" name="rating" placeholder="write review"></textarea>
+                <br>
+                <div class="card shadow-sm" style="background-color: var(--primary)">
+                    <div class="card-body" style="background-color: var(--primary)">
+                        <h6 class="card-text" style="color: var(--accents);">Bob</h6>
+                        <p class="card-text" style="color: var(--body);">These stickers are amazing!</p>
+                        <a href="/" class="card-link">Update</a>
+                        <a href="/" class="card-link">Delete</a>
+                    </div>
                 </div>
-                <p><button type="submit">POST</button></p>
-            </form>
-            <br>
-            <br>
-            <div class="row justify-content-md-center">
-                <div class="col">
-                    <table class="table" style="color:white;">
-                        <tr th:each="review : ${reviewList}">
-                            <div class="card shadow-sm" style="background-color: var(--primary)">
-                                <div class="card-body" style="background-color: var(--primary)">
-                                    <h6 class="card-text" th:text="${review.getName()}" style="color: var(--accents);"></h6>
-                                    <p class="card-text" th:text="${review.getRating()}" style="color: var(--body);"></p>
-                                    <a th:href="@{reviewsupdate/{id}(id = ${review.getId()})}" class="card-link">Update</a>
-                                    <a th:href="@{reviewsdelete/{id}(id = ${review.getId()})}" class="card-link">Delete</a>
-                                </div>
-                            </div>
-                            <br>
-                        </tr>
-                    </table>
+                <br>
+                <div class="card shadow-sm" style="background-color: var(--primary)">
+                    <div class="card-body" style="background-color: var(--primary)">
+                        <h6 class="card-text" style="color: var(--accents);">Joe</h6>
+                        <p class="card-text" style="color: var(--body);">These stickers are insane!</p>
+                        <a href="/" class="card-link">Update</a>
+                        <a href="/" class="card-link">Delete</a>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!--
-            <br>
-            <div class="row justify-content-md-center">
-                <div class="col">
-                    <div class="card shadow-sm" style="background-color: var(--primary)">
-                        <div class="card-body" style="background-color: var(--primary)">
-                            <h6 class="card-text" style="color: var(--accents);">Billy</h6>
-                            <p class="card-text" style="color: var(--body);">These stickers are epic!</p>
-                            <a href="/" class="card-link">Update</a>
-                            <a href="/" class="card-link">Delete</a>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="card shadow-sm" style="background-color: var(--primary)">
-                        <div class="card-body" style="background-color: var(--primary)">
-                            <h6 class="card-text" style="color: var(--accents);">Bob</h6>
-                            <p class="card-text" style="color: var(--body);">These stickers are amazing!</p>
-                            <a href="/" class="card-link">Update</a>
-                            <a href="/" class="card-link">Delete</a>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="card shadow-sm" style="background-color: var(--primary)">
-                        <div class="card-body" style="background-color: var(--primary)">
-                            <h6 class="card-text" style="color: var(--accents);">Joe</h6>
-                            <p class="card-text" style="color: var(--body);">These stickers are insane!</p>
-                            <a href="/" class="card-link">Update</a>
-                            <a href="/" class="card-link">Delete</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            -->
-            <script>
-                ScrollReveal().reveal('.info', {
-                    interval: 16,
-                    reset: true,
-                    useDelay: 'onload'
-                })
-            </script>
-            <!-- End of body content specific to page -->
+        <script>
+            ScrollReveal().reveal('.info', {
+                interval: 16,
+                reset: true,
+                useDelay: 'onload'
+            })
+        </script>
+
+    <!-- End of body content specific to page -->
     </div>
 </div></body>
 </html>

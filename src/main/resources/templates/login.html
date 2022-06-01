@@ -5,6 +5,13 @@
 <head><div layout:fragment="metadata" th:remove="tag">
     <title>Login</title>
     <style>
+        html, body {
+            background-image: url('https://wallpapercave.com/wp/wp6944529.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
         .login-box {
             background-color: var(--primary);
             margin: 50px 250px;
@@ -14,13 +21,13 @@
             padding-top: 2rem;
         }
         input {
-            background-color: var(--secondary);
-            border: 1px solid var(--secondary);
-            border-radius: 4px;
-            width: 50%;
-            margin-top: 2rem;
-            height: 2.5rem;
-            padding: 12px 20px;
+           background-color: var(--secondary);
+           border: 1px solid var(--secondary);
+           border-radius: 4px;
+           width: 50%;
+           margin-top: 2rem;
+           height: 2.5rem;
+           padding: 12px 20px;
 
         }
         ::placeholder {
@@ -42,12 +49,12 @@
     </style>
 </div></head>
 <body><div layout:fragment="content" th:remove="tag">
-    <h1 style="text-align: center; color: var(--secondary); margin-top: 20px;">Club Login</h1>
+    <h1 style=" text-align: center; color: var(--secondary); margin-top: 20px;">Club Login</h1>
     <div class="login-box justify-content-center align-items-center">
         <h3 style="color: var(--secondary)">Authorized Club Access Only</h3>
         <input name="username" id="username" placeholder="Username">
         <input type="password" name="password" id="password" placeholder="Password">
-        <p><button type="submit">LOGIN</button></p>
+        <p><button>LOGIN</button></p>
     </div>
 </div>
 </body>
