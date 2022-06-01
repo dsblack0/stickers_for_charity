@@ -14,6 +14,7 @@ Extends the JpaRepository interface from Spring Data JPA.
  */
 public interface PersonJpaRepository extends JpaRepository<Person, Long> {
     Person findByEmail(String email);
+    Person findByName(String name);
 
     List<Person> findAllByOrderByNameAsc();
 
