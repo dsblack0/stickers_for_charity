@@ -39,7 +39,7 @@
                          Reference Bootstrap Form
                             https://getbootstrap.com/docs/4.0/components/forms/#readonly-plain-text
                      -->
-                    <form class="form-inline" action="#" th:action="@{/signupAction}" th:object="${person}" method="POST">
+                    <form class="form-inline" action="#" th:action="@{/signup}" th:object="${person}" method="POST">
                         <div class="form-group mb-2 mr-sm-2">
                             <label for="email">Email:</label>
                             <input type="email" th:field="*{email}" id="email">
@@ -56,9 +56,9 @@
                             <small th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</small>
                         </div>
                         <div class="input-group mb-2 mr-sm-2">
-                            <label for="dob">Birth Date:</label>
-                            <input type="date" th:field="*{dob}" id="dob">
-                            <small th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}">Birth Date Error</small>
+                            <label for="grade">Grade:</label>
+                            <input type="number" th:field="*{grade}" id="grade">
+                            <small th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}">Birth Date Error</small>
                         </div>
                         <button type="submit" class="btn btn-primary">Sign Up</button>
                     </form>

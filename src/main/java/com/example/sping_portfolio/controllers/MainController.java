@@ -6,9 +6,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
-import java.util.Objects;
-
 @Controller
 public class MainController {
     private String signUpErrorMessage = "";
@@ -16,13 +13,6 @@ public class MainController {
     @GetMapping("/home")
     public String home(Model model) {
         return "index";
-    }
-
-    @GetMapping("/signup")
-    public String showSignupForm(Person person) {
-        // the above signature must use a Person object as a parameter for
-        // the signup.html to work with “bean-backed form” or "form-backing bean".
-        return "signup"; // take us to signup.html form
     }
 
     @GetMapping("/donations")

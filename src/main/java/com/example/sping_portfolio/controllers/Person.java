@@ -49,24 +49,16 @@ public class Person {
     @Size(min = 2, max = 30, message = "Name (2 to 30 chars)")
     private String name;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date dob;
+    @NonNull
+    private String grade;
 
     // Initializer used when setting database from an API
-    public Person(String email, String password, String name, Date dob, Role role) {
+    public Person(String email, String password, String name, String grade, Role role) {
         this.email = email;
         this.password = password;
         this.name = name;
-        this.dob = dob;
+        this.grade = grade;
         this.roles.add(role);
-    }
-
-    // A custom getter to return age from dob calculation
-    public int getAge() {
-        if (this.dob != null) {
-            LocalDate birthDay = this.dob.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-            return Period.between(birthDay, LocalDate.now()).getYears(); }
-        return -1;
     }
 
 }

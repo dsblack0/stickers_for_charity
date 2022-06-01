@@ -50,12 +50,16 @@
 </div></head>
 <body><div layout:fragment="content" th:remove="tag">
     <h1 style=" text-align: center; color: var(--secondary); margin-top: 20px;">Club Login</h1>
-    <div class="login-box justify-content-center align-items-center">
-        <h3 style="color: var(--secondary)">Authorized Club Access Only</h3>
-        <input name="username" id="username" placeholder="Username">
-        <input type="password" name="password" id="password" placeholder="Password">
-        <p><button>LOGIN</button></p>
-    </div>
+    <form name="f" th:action="@{/login}" method="POST">
+        <div class="login-box justify-content-center align-items-center">
+            <h3 style="color: var(--secondary)">Authorized Club Access Only</h3>
+            <input type="text" name="username" id="username" placeholder="Username" required>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <p><button type="submit">LOGIN</button></p>
+            <p th:if="${param.error}" class="alert alert-error">Invalid username and/or password</p>
+            <p th:if="${param.logout}" class="alert alert-success">You have been logout out.</p>
+        </div>
+    </form>
 </div>
 </body>
 </html>
