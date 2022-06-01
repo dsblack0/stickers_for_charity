@@ -23,16 +23,10 @@ public class MainController {
     }
 
     @GetMapping("/signup")
-    public String signup(@RequestParam(name="fullname", required=true) String fullname,
-                         @RequestParam(name="email", required=true) String email,
-                         @RequestParam(name="password", required=true) String password,
-                         @RequestParam(name="passwordagain", required=true) String passwordagain,
-                         Model model) {
-        //model.addAttribute("signUpErrorMessage", "Sorry, cannot sign you up.");
-        if(! SignUp.validateSignUpInputs(fullname, email, password, passwordagain)) {
-            model.addAttribute("signUpErrorMessage", "Sorry, cannot sign you up.");
-        }
-        return "signup";
+    public String showSignupForm(Person person) {
+        // the above signature must use a Person object as a parameter for
+        // the signup.html to work with “bean-backed form” or "form-backing bean".
+        return "signup"; // take us to signup.html form
     }
 
     @GetMapping("/donations")

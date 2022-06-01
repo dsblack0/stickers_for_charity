@@ -1,8 +1,9 @@
-package com.example.sping_portfolio.database.signup;
+package com.example.sping_portfolio.controllers;
 
 //import com.nighthawk.csa.mvc.database.ModelRepository;
 //import com.nighthawk.csa.mvc.database.person.Person;
 
+import com.example.sping_portfolio.database.signup.ModelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +20,19 @@ public class PersonViewController {
     // Autowired enables Control to connect HTML and POJO Object to database easily for CRUD
     @Autowired
     private ModelRepository repository;
+
+    @PostMapping("/signupAction")
+    public String signupAction(@RequestParam(name="fullname", required=false) String fullname,
+                         @RequestParam(name="email", required=false) String email,
+                         @RequestParam(name="password", required=false) String password,
+                         @RequestParam(name="passwordagain", required=false) String passwordagain,
+                         Model model) {
+        //model.addAttribute("signUpErrorMessage", "Sorry, cannot sign you up.");
+//        if (!SignUp.validateSignUpInputs(fullname, email, password, passwordagain)) {
+//            model.addAttribute("signUpErrorMessage", "Sorry, cannot sign you up.");
+//        }
+        return "signup";
+    }
 
     @GetMapping("/database/person")
     public String person(Model model) {

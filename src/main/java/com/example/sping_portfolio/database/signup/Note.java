@@ -1,5 +1,6 @@
 package com.example.sping_portfolio.database.signup;
 
+import com.example.sping_portfolio.controllers.Person;
 import lombok.*;
 
 import javax.persistence.*;
