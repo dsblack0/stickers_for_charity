@@ -3,7 +3,7 @@
       layout:decorate="~{layout}" lang="en">
 
 <head><div layout:fragment="metadata" th:remove="tag">
-    <title>Update Review</title>
+    <title>Add Event</title>
     <style>
         input {
             background-color: var(--bg);
@@ -36,17 +36,19 @@
 
 <body><div layout:fragment="content" th:remove="tag">
     <div class="content" style="margin-left: 15%; margin-right: 15%;">
-        <h1 style="text-align: center; color: var(--secondary); margin-top: 20px;">Update Review</h1>
-        <div class="row justify-content-md-center">
-            <form role="form" action="/reviewsupdate" th:object="${Reviews}" method="POST" class="submissionfield">
-                <input type="hidden" th:field="*{id}" readonly="readonly" />
-                <input type="hidden" th:field="*{name}" readonly="readonly" />
-                <p>Rating:</p>
-                <textarea type="text" th:field="*{rating}" rows="4" cols="50"></textarea>
-                <p th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}">Name Error</p>
-                <button type="submit">Save</button>
+        <h1 style="text-align: center; color: var(--secondary); margin-top: 20px;">Create Event</h1>
+            <form class="form" role="form" action="#">
+                <div class="form-group mx-sm">
+                    <input type="text" class="form-control" id="title" name="title" placeholder="enter event name">
+                </div>
+                <div class="form-group mx-sm">
+                    <input type="text" class="form-control" id="date" name="date" placeholder="enter date (xx/xx/xxxx)">
+                </div>
+                <div class="form-group mx-sm">
+                    <textarea type="text" class="form-control" id="description" name="description" placeholder="write description"></textarea>
+                </div>
+                <p><button type="submit">ADD</button></p>
             </form>
-        </div>
     </div>
 </div></body>
 </html>

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 @Controller
 public class MainController {
@@ -88,7 +87,6 @@ public class MainController {
         return "redirect:/reviews";
     }
 
-
     @GetMapping("/login")
     public String login(Model model) {return "login";}
 
@@ -110,6 +108,19 @@ public class MainController {
 
     @GetMapping("/personupdateXXX")
     public String personupdate(Model model) {return "personupdate";}
+
+
+    /*@GetMapping("/eventscreate")
+    public String eventscreate(@RequestParam(name="title", required=false, defaultValue="Event Name") String title,
+                               @RequestParam(name="date", required=false, defaultValue="0/0/0000") String date,
+                               @RequestParam(name="description", required=true, defaultValue = "This event is about...") String description,
+                               Model model) {
+
+        Events event = new Events();
+        event.detailsCreate(title, date, description);
+        eventsList.add(event);
+        return "eventscreate";
+    }*/
 
     // these are for later
     /* @GetMapping("/")
