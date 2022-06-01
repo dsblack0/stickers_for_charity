@@ -1,5 +1,6 @@
 package com.example.sping_portfolio.database.signup;
 
+import com.example.sping_portfolio.controllers.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
