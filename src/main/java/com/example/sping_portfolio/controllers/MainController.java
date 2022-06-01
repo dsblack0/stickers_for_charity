@@ -1,5 +1,6 @@
 package com.example.sping_portfolio.controllers;
 
+import com.example.sping_portfolio.database.signup.SignUp;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class MainController {
+    private ArrayList<SignUp> memberList = new ArrayList<>();
     private ArrayList<Reviews> reviewList = new ArrayList<Reviews>();
 
     @GetMapping("/home")
@@ -21,7 +23,9 @@ public class MainController {
     }
 
     @GetMapping("/signup")
-    public String signup(Model model) { return "signup"; }
+    public String signup(Model model) {
+        return "signup";
+    }
 
     @GetMapping("/donations")
     public String donations(Model model) { return "donations"; }
@@ -61,10 +65,19 @@ public class MainController {
     public String login(Model model) {return "login";}
 
     @GetMapping("/person")
-    public String person(Model model) {return "person";}
+    public String person(Model model) {
+        model.addAttribute("memberList", memberList);
+        return "person";
+    }
 
     @GetMapping("/personcreate")
-    public String personcreate(Model model) {return "personcreate";}
+    public String personcreate(@RequestParam(name="email", required=false, defaultValue="example@example.com") String email,
+                                @RequestParam(name="password", required=false, defaultValue="123qwerty") String password,
+                                Model model) {
+        SignUp member = new SignUp();
+        member.createMember(email, password);
+        memberList.add(member);
+        return "redirect:/person";}
 
     @GetMapping("/personupdate")
     public String personupdate(Model model) {return "personupdate";}
