@@ -12,7 +12,6 @@ import java.util.Objects;
 @Controller
 public class MainController {
     private String signUpErrorMessage = "";
-    private ArrayList<Reviews> reviewList = new ArrayList<Reviews>();
 
     @GetMapping("/home")
     public String home(Model model) {
