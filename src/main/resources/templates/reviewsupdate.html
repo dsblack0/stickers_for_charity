@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head><div layout:fragment="metadata" th:remove="tag">
+    <title>Update Review</title>
+    <style>
+        input {
+            background-color: var(--bg);
+            border: 1px solid var(--bg);
+            border-radius: 4px;
+            width: 50%;
+            margin-top: 2rem;
+            height: 2.5rem;
+            padding: 12px 20px;
+
+        }
+        ::placeholder {
+            color: var(--header);
+            font-size: large;
+        }
+        button {
+            background-color: var(--header);
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: large;
+            border: 1px solid var(--secondary);
+            border-radius: 4px;
+            margin-top: 2rem;
+            text-align: center;
+            width: 15%;
+            padding: 3px 0;
+        }
+    </style>
+</div></head>
+
+<body><div layout:fragment="content" th:remove="tag">
+    <div class="content" style="margin-left: 15%; margin-right: 15%;">
+        <h1 style="text-align: center; color: var(--secondary); margin-top: 20px;">Update Review</h1>
+        <div class="row justify-content-md-center">
+            <form role="form" action="/reviewsupdate" th:object="${Reviews}" method="POST" class="submissionfield">
+                <input type="hidden" th:field="*{id}" readonly="readonly" />
+                <input type="hidden" th:field="*{name}" readonly="readonly" />
+                <p>Rating:</p>
+                <textarea type="text" th:field="*{rating}" rows="4" cols="50"></textarea>
+                <p th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}">Name Error</p>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+</div></body>
+</html>
