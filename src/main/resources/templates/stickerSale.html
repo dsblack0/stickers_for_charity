@@ -93,12 +93,8 @@
     <!-- Start of body content specific to page -->
     <div class="center" style="margin-left: 9%; margin-right: 9%">
         <h1 class="titlehead">Sticker Sale</h1>
-        <?php
-        require_once('../class.redbubble.php');
-        $config = new RedbubbleConfig('prolificlee', 'object', false);
-        $connection = new Redbubble($config);
-        ?>
-        <!-- <div class="card-deck" th:each="sticker : ${stickerList}" style="justify-content:center">
+
+        <div class="card-deck" th:each="sticker : ${stickerList}" style="justify-content:center">
             <div class="card shadow-sm" style="border-radius: 10px">
                 <img class="card-img-top" th:src="@{${sticker.getPictURL()}}" alt="Card image cap">
                 <div class="card-body" style="background-color: var(--primary); text-align:center">
@@ -108,7 +104,7 @@
                     <p><button onClick="popUp()">Order Now</button></p>
                 </div>
             </div>
-        </div> -->
+        </div>
     </div>
 
     <!-- <div class="popup-form" id="orderForm">
