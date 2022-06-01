@@ -4,16 +4,42 @@
 
 <head><div layout:fragment="metadata" th:remove="tag">
     <title>Club Members</title>
+    <style>
+        html, body {
+            background-image: url('https://images.pexels.com/photos/53893/pexels-photo-53893.jpeg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .members-box {
+            background-color: var(--primary);
+            margin: 50px 150px;
+            border-radius: 25px;
+            text-align: center;
+            padding: 2rem;
+        }
+        th {
+            background-color: var(--header);
+            color: var(--secondary);
+            border: 2px solid var(--header);
+        }
+        td {
+            color: var(--secondary);
+            border: 2px solid var(--header);
+        }
+    </style>
 </div></head>
 <body><div layout:fragment="content" th:remove="tag">
     <h1 style="text-align: center; color: var(--secondary); margin-top: 20px;">SFC Club Members!</h1>
-    <div class="row align-items-md-stretch">
-        <table class="table">
+    <div class="members-box">
+        <table class="table" style="border: 2px solid var(--header);">
             <thead>
             <tr>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Grade</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -22,7 +48,7 @@
                 <td th:text="${member.email}">Email</td>
                 <td th:text="${member.grade}">Grade</td>
                 <td>
-                    <a th:href="@{/memberDelete/{id}(id = ${member.id})}">Delete</a>
+                    <a th:href="@{/memberDelete/{id}(id = ${member.id})}" style="color: var(--secondary)">Delete</a>
                 </td>
             </tr>
             </tbody>
