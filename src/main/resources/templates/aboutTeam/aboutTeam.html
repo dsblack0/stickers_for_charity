@@ -56,7 +56,7 @@
     <div class="member-profiles" style="margin-left: 50px;">
         <div class=" card card-flip" style="width: 24rem; height: 25rem; margin: 30px; background-color: var(--primary); display: inline-block;" th:each="profile : ${list}">
             <div class="card-front justify-content-center align-items-center" style="text-align: center; margin-top: 2rem">
-                <!--<img class="member-pic" th:src="@{${profile.getPicURL()}}" style="height: 21rem; align-self: center" alt=""> -->
+                <image th:src="@{__${profile.picFile}__}" style="height: 21rem; align-self: center"></image>
                 <h5 th:text="${profile.name}" style="color: var(--secondary)"></h5>
             </div>
             <div class="card-back justify-content-center align-items-center" style="text-align: center; margin: 2rem">
