@@ -20,13 +20,6 @@ public class MainController {
         return "index";
     }
 
-    @GetMapping("/signup")
-    public String showSignupForm(Person person) {
-        // the above signature must use a Person object as a parameter for
-        // the signup.html to work with “bean-backed form” or "form-backing bean".
-        return "signup"; // take us to signup.html form
-    }
-
     @GetMapping("/donations")
     public String donations(Model model) { return "donations"; }
 
