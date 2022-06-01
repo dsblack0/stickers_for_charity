@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head><div layout:fragment="metadata" th:remove="tag">
+    <title>Update Review</title>
+</div></head>
+<body><div layout:fragment="content" th:remove="tag">
+    <h1 style="text-align: center; color: var(--secondary); margin-top: 20px;">Update Review</h1>
+    <div class="row justify-content-md-center">
+        <form action="/reviewsupdate" th:object="${Reviews}" method="POST" class="submissionfield">
+            <table style="color:Black;">
+                <tr>
+                    <td><input type="hidden" th:field="*{id}" readonly="readonly" /></td>
+                </tr>
+                <tr>
+                    <td><input type="hidden" th:field="*{name}" readonly="readonly" /></td>
+                </tr>
+                <td>Rating:</td>
+                <td><textarea type="text" th:field="*{rating}" rows="4" cols="50"/></td>
+                <td th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}">Name Error</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Save</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</div>
+</div>
+</body>
+</html>
