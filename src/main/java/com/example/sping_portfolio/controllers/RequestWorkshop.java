@@ -48,6 +48,6 @@ public class RequestWorkshop {
         model.addAttribute("email", email);
         model.addAttribute("phone", phone);
         model.addAttribute("description", description);
-        return "/RequestWorkshop";
+        return "RequestWorkshop";
     }
 }
