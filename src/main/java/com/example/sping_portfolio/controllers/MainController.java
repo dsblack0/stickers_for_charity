@@ -66,13 +66,13 @@ public class MainController {
     @GetMapping("/login")
     public String login(Model model) {return "login";}
 
-    @GetMapping("/person")
+    @GetMapping("/personXXX")
     public String person(Model model) {
         //model.addAttribute("memberList", memberList);
         return "person";
     }
 
-    @GetMapping("/personcreate")
+    @GetMapping("/personcreateXXX")
     public String personcreate(@RequestParam(name="email", required=false, defaultValue="example@example.com") String email,
                                 @RequestParam(name="password", required=false, defaultValue="123qwerty") String password,
                                 Model model) {
@@ -82,7 +82,7 @@ public class MainController {
         return "redirect:/person";
     }
 
-    @GetMapping("/personupdate")
+    @GetMapping("/personupdateXXX")
     public String personupdate(Model model) {return "personupdate";}
 
     // these are for later
