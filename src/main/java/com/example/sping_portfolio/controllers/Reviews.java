@@ -11,6 +11,15 @@ public class Reviews implements Serializable {
         rating = r;
     }
 
+    public void updateReview(String ne) {
+        rating = ne;
+    }
+
+    public void deleteReview(){
+        //to be implemented
+    }
+
+
     public String getName() {
         return name;
     }
