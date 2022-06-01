@@ -1,71 +1,72 @@
+<!-- This page is illustrative and contains ideas about HTML formatting -->
 <!DOCTYPE HTML>
 <!-- Signals to the Layout Dialect which layout should be used to decorate this View -->
-<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+<html xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml"
       layout:decorate="~{layout}" lang="en">
 
-    <div layout:fragment="metadata" th:remove="tag">
-        <title>Sign Up</title>
-        <style>
-            html, body {
-                background-image: url('https://wallpapercave.com/wp/wp6944529.jpg');
-                background-position: center;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-size: cover;
-            }
-            .signup-box {
-                background-color: var(--primary);
-                margin: 50px 250px;
-                border-radius: 25px;
-                text-align: center;
-                padding-bottom: 2rem;
-                padding-top: 2rem;
-            }
-            input {
-                background-color: var(--secondary);
-                border: 1px solid var(--secondary);
-                border-radius: 4px;
-                width: 50%;
-                margin-top: 2rem;
-                height: 2.5rem;
-                padding: 12px 20px;
+<!-- <head> -->
+<div layout:fragment="head" th:remove="tag">
+    <title>Signup Form</title>
+</div>
 
-            }
-            ::placeholder {
-                color: var(--header);
-                font-size: large;
-            }
-            button {
-                background-color: var(--header);
-                color: var(--secondary);
-                font-weight: bold;
-                font-size: large;
-                border: 1px solid var(--secondary);
-                border-radius: 4px;
-                margin-top: 2rem;
-                text-align: center;
-                width: 15%;
-                padding: 3px 0;
-            }
-        </style>
-    </div>
+<!-- <body> -->
+<div layout:fragment="content" th:remove="tag">
+    <!-- Page specific body additions -->
+    <div class="container">
 
-    <div layout:fragment="content" th:remove="tag">
-        <h1 style=" text-align: center; color: var(--secondary); margin-top: 20px;">Sign Up</h1>
-        <br>
-        <div class="signup-box justify-content-center align-items-center">
-                <form name="f" th:action="@{/signup}" method="POST">
-                    <!-- 'email' is mapped to 'username' for Spring Security -->
-                    <input type="email" id='username' name="username" size="20" placeholder="Email" required>
-                    <input type="password" id="password" name="password" size="20" placeholder="Password" required>
-                    <p th:href="@{/personcreate}"><button>Sign Up</button></p>
-                    <p th:if="${param.error}" class="alert alert-error">
-                        Invalid username and password.
-                    </p>
-                    <p th:if="${param.logout}" class="alert alert-success">
-                        You have been logged out.
-                    </p>
-                </form>
+        <div class="row justify-content-md-center">
+            <h2>Welcome, Enter the new Persons details</h2>
         </div>
+
+        <div class="row justify-content-md-center">
+            <div class="col8">
+                <div class="jumbotron">
+                    <h3>Create Person</h3>
+                    <!-- ThymeLeaf allows person abject of the Class Person to be acted upon by the form
+                         This is known as a “bean-backed form” or "form-backing bean".
+                            th:object - the backend form object (bean object)
+                         There are fields in the Person bean
+                            th:field="*{name}"
+                            th:field="*{age}"
+                            th:field="*{dob}"
+                         Each field has supporting line to show errors in validation
+                            th:errors - form input errors added when validation errors occur
+                         Reference for CRUD
+                            https://www.baeldung.com/spring-boot-crud-thymeleaf
+                         Get started with dialects in 5 minutes
+                            https://www.thymeleaf.org/doc/articles/standarddialect5minutes.html
+                         Reference Bootstrap Form
+                            https://getbootstrap.com/docs/4.0/components/forms/#readonly-plain-text
+                     -->
+                    <form class="form-inline" action="#" th:action="@{/signupAction}" th:object="${person}" method="POST">
+                        <div class="form-group mb-2 mr-sm-2">
+                            <label for="email">Email:</label>
+                            <input type="email" th:field="*{email}" id="email">
+                            <small th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</small>
+                        </div>
+                        <div class="form-group mb-2 mr-sm-2">
+                            <label for="password">Password:</label>
+                            <input type="password" th:field="*{password}" id="password">
+                            <small th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</small>
+                        </div>
+                        <div class="input-group mb-2 mr-sm-2">
+                            <label for="name">Name:</label>
+                            <input type="text" th:field="*{name}" id="name">
+                            <small th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</small>
+                        </div>
+                        <div class="input-group mb-2 mr-sm-2">
+                            <label for="dob">Birth Date:</label>
+                            <input type="date" th:field="*{dob}" id="dob">
+                            <small th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}">Birth Date Error</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </div>
+</div>
+
 </html>

@@ -30,10 +30,10 @@
         }
         button {
             background-color: var(--header);
-            color: var(--bg);
+            color: var(--secondary);
             font-weight: bold;
             font-size: large;
-            border: 1px solid var(--bg);
+            border: 1px solid var(--secondary);
             border-radius: 4px;
             margin-top: 2rem;
             text-align: center;
@@ -55,24 +55,26 @@
             <div class="form-group mx-sm-3 mb-2">
                 <textarea type="text" class="form-control" id="rating" name="rating" placeholder="write review"></textarea>
             </div>
-            <button type="submit">Post</button>
+            <p><button type="submit">POST</button></p>
         </form>
         <br>
-        <div class="row justify-content-md-center"  >
-            <table class="table" style="color:white;">
-                <tr th:each="review : ${reviewList}">
-                    <div class="col">
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col">
+                <table class="table" style="color:white;">
+                    <tr th:each="review : ${reviewList}">
                         <div class="card shadow-sm" style="background-color: var(--primary)">
                             <div class="card-body" style="background-color: var(--primary)">
                                 <h6 class="card-text" th:text="${review.getName()}" style="color: var(--accents);"></h6>
                                 <p class="card-text" th:text="${review.getRating()}" style="color: var(--body);"></p>
-                                <a href="/" class="card-link">Update</a>
-                                <a href="/" class="card-link">Delete</a>
+                                <a th:href="@{reviewsupdate/{id}(id = ${review.getId()})}" class="card-link">Update</a>
+                                <a th:href="@{reviewsdelete/{id}(id = ${review.getId()})}" class="card-link">Delete</a>
                             </div>
                         </div>
-                    </div>
-                </tr>
-            </table>
+                        <br>
+                    </tr>
+                </table>
+            </div>
         </div>
 
         <!--
@@ -108,7 +110,6 @@
             </div>
         </div>
         -->
-
         <script>
             ScrollReveal().reveal('.info', {
                 interval: 16,
@@ -116,7 +117,6 @@
                 useDelay: 'onload'
             })
         </script>
-
         <!-- End of body content specific to page -->
     </div>
 </div></body>

@@ -1,5 +1,6 @@
 package com.example.sping_portfolio.database.signup;
 
+import com.example.sping_portfolio.controllers.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -123,8 +124,8 @@ public class ModelRepository implements UserDetailsService {  // "implements" ti
         return roleJpaRepository.findByName(roleName);
     }
 
-    public void addRoleToPerson(String email, String roleName) { // by passing in the two strings you are giving the user that certain role
-        Person person = personJpaRepository.findByEmail(email);
+    public void addRoleToPerson(String name, String roleName) { // by passing in the two strings you are giving the user that certain role
+        Person person = personJpaRepository.findByName(name);
         if (person != null) {   // verify person
             Role role = roleJpaRepository.findByName(roleName);
             if (role != null) { // verify role

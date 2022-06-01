@@ -1,5 +1,6 @@
 package com.example.sping_portfolio.database.signup;
 
+import com.example.sping_portfolio.controllers.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -13,6 +14,7 @@ Extends the JpaRepository interface from Spring Data JPA.
  */
 public interface PersonJpaRepository extends JpaRepository<Person, Long> {
     Person findByEmail(String email);
+    Person findByName(String name);
 
     List<Person> findAllByOrderByNameAsc();
 
