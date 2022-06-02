@@ -18,6 +18,11 @@ public class RequestWorkshop {
                                  @RequestParam(name="email", required=false, defaultValue = "") String email,
                                  @RequestParam(name="phone", required=false, defaultValue = "") String phone,
                                  @RequestParam(name="description", required=false, defaultValue = "") String description,
+                                 @RequestParam(name="lowElementary", required = false, defaultValue = "") boolean lowElementary,
+                                 @RequestParam(name="highElementary", required = false, defaultValue = "") boolean highElementary,
+                                 @RequestParam(name="middle", required = false, defaultValue = "") boolean middle,
+                                 @RequestParam(name="high", required = false, defaultValue = "") boolean high,
+                                 @RequestParam(name="date", required = false, defaultValue = "none")String date,
                                  Model model)
             throws IOException, InterruptedException, ParseException {
         //api
@@ -37,7 +42,8 @@ public class RequestWorkshop {
                                 "\"value\": \"Full Name: " + name +
                                 " Email: " + email +
                                 " Phone #: " + phone +
-                                " Description: " + description + "\"}]}"))
+                                " Description: " + description +
+                                " Date: " + date + "\"}]}"))
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println(response.body());
@@ -48,6 +54,11 @@ public class RequestWorkshop {
         model.addAttribute("email", email);
         model.addAttribute("phone", phone);
         model.addAttribute("description", description);
+        model.addAttribute("date", date);
+        model.addAttribute("lowElementary", lowElementary);
+        model.addAttribute("highElementary", highElementary);
+        model.addAttribute("middle", middle);
+        model.addAttribute("high", high);
         return "/RequestWorkshop";
     }
 }

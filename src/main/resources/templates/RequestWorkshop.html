@@ -4,7 +4,6 @@
 <head layout:fragment="metadata" th:remove="tag">
     <meta charset="UTF-8">
     <title>Request Workshop</title>
-
     <style>
         html, body {
             background-image: url('https://wallpapers.com/images/high/sunset-in-snowy-ranges-rblr9s9l3ydi09gp.jpg');
@@ -32,45 +31,45 @@
             border-radius: 3px;
         }
     </style>
-
 </head>
 <body>
-    <div layout:fragment="content" th:remove="tag">
-        <div class="stickerForm" style="margin: 30px; background-color: var(--primary); width: 40%; padding: 40px; border-radius: 20px" >
-            <form method="GET" action="/CustomStickers" id="stickerOrder">
-                <h1 style="color:var(--secondary)">Request Form</h1><br>
-                <div class="w3-row-padding", style="color: var(--secondary)">
-                    <div class="w3-half">
-                        <input class="w3-input w3-border" type="text" name="name" id="name" placeholder="Full Name"><br><br>
-                    </div>
-                    <div class="w3-half">
-                        <input class="w3-input w3-border" type="email" name="email" id="email"  placeholder="Email"><br><br>
-                    </div>
-                    <div class="w3-half">
-                        <input class="w3-input w3-border" type="text" name="phone" id="phone" placeholder="Phone Number"><br><br>
-                    </div>
+<div layout:fragment="content" th:remove="tag">
+    <div class="stickerForm" style="margin: 30px; background-color: var(--primary); width: 40%; padding: 40px; border-radius: 20px" >
+        <form method="GET" action="/CustomStickers" id="stickerOrder">
+            <h1 style="color:var(--secondary)">Request Form</h1><br>
+            <div class="w3-row-padding", style="color: var(--secondary)">
+                <div class="w3-half">
+                    <input class="w3-input w3-border" type="text" name="name" id="name" placeholder="Full Name"><br><br>
                 </div>
-                <p style="color: var(--secondary)">Describe the Workshop</p>
-                <textarea name="description" id="description" rows="10" cols="50" placeholder="Description"></textarea>
-                <br><br>
-                <form>
-                    <p style="color: var(--secondary)">Which age groups should this workshop cater to?</p>
-                    <input type="checkbox" id="lowElementary" name="lowElementary" value="Preschool - 2nd Grade">
-                    <label for="lowElementary" style="color:var(--secondary)">Preschool - 2nd Grade</label><br>
-                    <input type="checkbox" id="highElementary" name="highElementary" value="3rd Grade - 5th Grade">
-                    <label for="highElementary" style="color:var(--secondary)">3rd Grade - 5th Grade</label><br>
-                    <input type="checkbox" id="middle" name="middle" value="6th Grade - 8th Grade">
-                    <label for="middle" style="color:var(--secondary)">6th Grade - 8th Grade</label><br>
-                    <input type="checkbox" id="high" name="high" value="9th Grade - 12th Grade">
-                    <label for="high" style="color:var(--secondary)">9th Grade - 12th Grade</label><br>
-                </form>
-                <br>
-                <p style="color: var(--secondary)">Any preference for dates or times of this workshop?</p>
-                <textarea name="date" id="date" rows="5" cols="50" placeholder="Date or Time?"></textarea>
-                <br><br>
-                <input type="submit" value="Submit Request">
+                <div class="w3-half">
+                    <input class="w3-input w3-border" type="email" name="email" id="email"  placeholder="Email"><br><br>
+                </div>
+                <div class="w3-half">
+                    <input class="w3-input w3-border" type="text" name="phone" id="phone" placeholder="Phone Number"><br><br>
+                </div>
+            </div>
+            <p style="color: var(--secondary)">Describe the Sticker you wish to order.</p>
+            <p style="color: var(--secondary)">Describe the Workshop</p>
+            <textarea name="description" id="description" rows="10" cols="50" placeholder="Description"></textarea>
+            <br><br>
+            <form>
+                <p style="color: var(--secondary)">Which age groups should this workshop cater to?</p>
+                <input type="checkbox" id="lowElementary" name="lowElementary" value="Preschool - 2nd Grade">
+                <label for="lowElementary" style="color:var(--secondary)">Preschool - 2nd Grade</label><br>
+                <input type="checkbox" id="highElementary" name="highElementary" value="3rd Grade - 5th Grade">
+                <label for="highElementary" style="color:var(--secondary)">3rd Grade - 5th Grade</label><br>
+                <input type="checkbox" id="middle" name="middle" value="6th Grade - 8th Grade">
+                <label for="middle" style="color:var(--secondary)">6th Grade - 8th Grade</label><br>
+                <input type="checkbox" id="high" name="high" value="9th Grade - 12th Grade">
+                <label for="high" style="color:var(--secondary)">9th Grade - 12th Grade</label><br>
             </form>
-        </div>
+            <br>
+            <p style="color: var(--secondary)">Any preference for dates or times of this workshop?</p>
+            <textarea name="date" id="date" rows="5" cols="50" placeholder="Date or Time?"></textarea>
+            <br><br>
+            <input type="submit" value="Submit Request">
+        </form>
     </div>
+</div>
 </body>
 </html>

@@ -3,6 +3,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -20,8 +25,35 @@ public class CustomStickers {
                                  @RequestParam(name="description", required=false, defaultValue = "") String description,
                                  @RequestParam(name="size", required=false, defaultValue="2 in x 2 in") String size,
                                  @RequestParam(name="quantity", required=false, defaultValue = "1") int quantity,
+                                 @RequestParam("pic") MultipartFile file,
                                  Model model)
             throws IOException, InterruptedException, ParseException {
+
+        //uploads
+        String filePath = "uploads/";
+        String webPath = "/" + filePath;
+        String picFile = webPath + file.getOriginalFilename();
+        try {
+            // Creating the directory to store file
+            File dir = new File( filePath );
+            if (!dir.exists())
+                dir.mkdirs();
+
+            // Create the file on server
+            byte[] bytes = file.getBytes();
+
+            // File write alternatives (going with Stream for now as in theory it would be non-blocking)
+            String path = filePath + file.getOriginalFilename();
+            File serverFile = new File( path );
+            BufferedOutputStream stream = new BufferedOutputStream(
+                    new FileOutputStream(serverFile));
+            stream.write(bytes);
+            stream.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();        // app stays alive, errors go to run console, /var/log/syslog
+        }
+
         //api
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create("https://rapidprod-sendgrid-v1.p.rapidapi.com/mail/send"))
@@ -41,7 +73,9 @@ public class CustomStickers {
                 " Phone #: " + phone +
                 " Description: " + description +
                 " Size: " + size +
-                " Quantity: " + quantity + "\"}]}"))
+                " Quantity: " + quantity + "\"}]" +
+                "\"type\": \"disposition/attachment\"," +
+                "\"value\"" + picFile + "}"))
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println(response.body());
