@@ -3,7 +3,7 @@
 ## Project Owner: Stickers for Charity Club President - Arushi Bharadwaj
 Our project is to create a website for the Stickers for Charity Club to use to sell stickers, collect donations, and interact with club members and customers.
 
-<iframe width="100%" height="800px" src="https://drive.google.com/file/d/1ReOlRz4suE1ipVw2ZS7XV99GDc8eNP9P/preview"></iframe>
+<iframe width="100%" height="700px" src="https://drive.google.com/file/d/1ReOlRz4suE1ipVw2ZS7XV99GDc8eNP9P/preview"></iframe>
 
 ## [Scrum Board](https://github.com/dsblack0/stickers_for_charity/projects/1)
 
