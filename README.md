@@ -5,7 +5,7 @@ Our project is to create a website for the Stickers for Charity Club to use to s
 
 [Website Video](https://drive.google.com/file/d/1ReOlRz4suE1ipVw2ZS7XV99GDc8eNP9P/view)
 
-<iframe src="https://drive.google.com/file/d/1ReOlRz4suE1ipVw2ZS7XV99GDc8eNP9P/preview"></iframe>
+<iframe width="100%" src="https://drive.google.com/file/d/1ReOlRz4suE1ipVw2ZS7XV99GDc8eNP9P/preview"></iframe>
 
 ## [Scrum Board](https://github.com/dsblack0/stickers_for_charity/projects/1)
 
