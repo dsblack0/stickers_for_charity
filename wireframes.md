@@ -6,16 +6,38 @@
 ![image](https://user-images.githubusercontent.com/55467785/157729346-ac7e705a-6f0e-4860-8ba2-06a79ddec9e6.png)
 
 ## Home Page
+![image](https://user-images.githubusercontent.com/70492417/171681889-e583ddd2-a300-4941-83b6-c4d947eeedb8.png)
 
 ## "Shop for Stickers"
+![image](https://user-images.githubusercontent.com/70492417/171682006-9cbf2a5c-c24a-4348-b1ae-9833b64008eb.png)
+![image](https://user-images.githubusercontent.com/70492417/171682039-fc7b53d4-eaab-4560-9c15-52433db45a76.png)
+
+## "Custom Stickers"
+**Light Mode: **
+![image](https://user-images.githubusercontent.com/70492417/171682325-c69040b6-c844-43a9-9562-308141ffa8fc.png)
+
+**Dark Mode:**
+![image](https://user-images.githubusercontent.com/70492417/171682343-f81784f7-10a4-4602-bd3b-2e9777507257.png)
 
 ## "Donate"
+![image](https://user-images.githubusercontent.com/70492417/171682637-8193cc93-f194-475a-ba3b-983864155232.png)
 
 ## "Events"
+**Light Mode: **
+![image](https://user-images.githubusercontent.com/70492417/171682569-f5bc0a5f-68d4-42fd-9773-c3b13944f729.png)
 
-## "Our Cause"
+**Dark Mode: **
+![image](https://user-images.githubusercontent.com/70492417/171682603-bc7f24bd-a96f-4116-b7dc-bda6edaff5c9.png)
+
+## "Reviews"
+**Light Mode: **
+![image](https://user-images.githubusercontent.com/70492417/171682442-976e3a1b-b3cc-4121-8a4e-2dc72b3d0f25.png)
+
+**Dark Mode:**
+![image](https://user-images.githubusercontent.com/70492417/171682670-f03c351c-ddd3-46c4-bfeb-61719f0c5925.png)
 
 ## "Sign Up"
+![Uploading image.png…]()
 
 
 ## "About the Team"
