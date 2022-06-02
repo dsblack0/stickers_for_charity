@@ -32,7 +32,7 @@ Displays current events for charity that the club is holding
 ### Sign Up (Samhitha + Prisha): 
 **Database** that allows members of the club to signup for the club. 
 
-<iframe width="100%" height="500px" src="https://drive.google.com/file/d/1wHFRx2E6Dt18JmSJEColdct2tVjdIayA/view?usp=sharing"></iframe>
+<iframe width="100%" height="500px" src="https://drive.google.com/file/d/1wHFRx2E6Dt18JmSJEColdct2tVjdIayA/preview"></iframe>
 
 ### About the Team (Samhitha): 
 **Database** of the current members in the club. CRUD function, including meaningful capture of **uploads**, available after authentication / sign in
