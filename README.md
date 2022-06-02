@@ -1,5 +1,10 @@
 # m2-clouds
 
+## Project Owner: Stickers for Charity Club President - Arushi Bharadwaj
+Our project is to create a website for the Stickers for Charity Club to use to sell stickers, collect donations, and interact with club members and customers.
+
+<iframe frameborder="0" width="100%" height="800px" src="https://drive.google.com/file/d/1ReOlRz4suE1ipVw2ZS7XV99GDc8eNP9P/view">
+
 ## [Scrum Board](https://github.com/dsblack0/stickers_for_charity/projects/1)
 
 ## Scrum Team
@@ -12,4 +17,4 @@
 | Sam | Github Admin | [dsblack0](https://github.com/dsblack0) | [Replit Link](https://replit.com/@dsblack0/sam-tri3-2) | [Indiv github source](https://github.com/dsblack0/sam-tri3) | [Online page](https://dsblack0.github.io/sam-tri3/) |
 | Prisha | Technical Officer | [PrishaMaiti](https://github.com/PrishaMaiti) | [Replit Link](https://replit.com/@PrishaMaiti/DataStructures#Main.java) | [Indiv github source](https://github.com/PrishaMaiti/DataStructures) | [Online page](https://prishamaiti.github.io/DataStructures) |
 
-Project Owner: Stickers for Charity Club President - Arushi Bharadwaj
+
