@@ -14,6 +14,12 @@ Request form for users to suggest their own custom sticker designs to be sold
 
 ![image](https://user-images.githubusercontent.com/70492417/171743049-4b181c05-0593-4499-b7b6-f2870d58b304.png)
 
+### Reuqest Workshop Form (Kaavya): 
+Request form for users to suggest their own workshop ideas for the club to conduct
+
+![request](https://user-images.githubusercontent.com/72475036/171873269-901c1bb3-9cfb-4f56-b64a-73bf8ea1b7dd.PNG)
+
+
 ### Donate (Prisha): 
 Allows users to donate money directly through PayPal
 
