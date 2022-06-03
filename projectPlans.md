@@ -42,7 +42,7 @@
 | Names | Job(s) |
 | ---   | ---    |
 | Chenxin | Deployment<br>Sticker Selling Page / Order Page |
-| Kaavya | Custom Stickers Page |
+| Kaavya | Custom Stickers Page<br>Request Workshop Page |
 | Maggie | Layout Styling<br>Home Page<br>Events Page |
 | Sam | Club Member Profiles<br>Sponsor Editing Feature |
 | Prisha | Membership Sign-Up Page<br>Donations/Sponsors Page |
