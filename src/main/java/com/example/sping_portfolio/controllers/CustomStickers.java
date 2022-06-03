@@ -2,6 +2,7 @@ package com.example.sping_portfolio.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -14,44 +15,54 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.text.ParseException;
+import java.util.Base64;
 
 @Controller
 public class CustomStickers {
 
     @GetMapping("/CustomStickers")
+    public String CustomStickers() { return "/CustomStickers"; }
+
+    @PostMapping("/CustomStickers")
     public String CustomStickers(@RequestParam(name="name", required=false, defaultValue = "") String name,
                                  @RequestParam(name="email", required=false, defaultValue = "") String email,
                                  @RequestParam(name="phone", required=false, defaultValue = "") String phone,
                                  @RequestParam(name="description", required=false, defaultValue = "") String description,
                                  @RequestParam(name="size", required=false, defaultValue="2 in x 2 in") String size,
                                  @RequestParam(name="quantity", required=false, defaultValue = "1") int quantity,
-                                 @RequestParam("pic") MultipartFile file,
+                                 @RequestParam(name="pic", required = false) MultipartFile file,
                                  Model model)
             throws IOException, InterruptedException, ParseException {
 
+        String picFile = "uploads/Logo.png";
+        byte [] encImage = null;
         //uploads
-        String filePath = "uploads/";
-        String webPath = "/" + filePath;
-        String picFile = webPath + file.getOriginalFilename();
-        try {
-            // Creating the directory to store file
-            File dir = new File( filePath );
-            if (!dir.exists())
-                dir.mkdirs();
+        if(file != null){
+            String filePath = "uploads/";
+            String webPath = "/" + filePath;
+            picFile = webPath + file.getOriginalFilename();
+            try {
+                // Creating the directory to store file
+                File dir = new File( filePath );
+                if (!dir.exists())
+                    dir.mkdirs();
 
-            // Create the file on server
-            byte[] bytes = file.getBytes();
+                // Create the file on server
+                byte[] bytes = file.getBytes();
 
-            // File write alternatives (going with Stream for now as in theory it would be non-blocking)
-            String path = filePath + file.getOriginalFilename();
-            File serverFile = new File( path );
-            BufferedOutputStream stream = new BufferedOutputStream(
-                    new FileOutputStream(serverFile));
-            stream.write(bytes);
-            stream.close();
+                encImage = Base64.getEncoder().encode(bytes);
 
-        } catch (IOException e) {
-            e.printStackTrace();        // app stays alive, errors go to run console, /var/log/syslog
+                // File write alternatives (going with Stream for now as in theory it would be non-blocking)
+                String path = filePath + file.getOriginalFilename();
+                File serverFile = new File( path );
+                BufferedOutputStream stream = new BufferedOutputStream(
+                        new FileOutputStream(serverFile));
+                stream.write(bytes);
+                stream.close();
+
+            } catch (IOException e) {
+                e.printStackTrace();        // app stays alive, errors go to run console, /var/log/syslog
+            }
         }
 
         //api
@@ -74,8 +85,11 @@ public class CustomStickers {
                 " Description: " + description +
                 " Size: " + size +
                 " Quantity: " + quantity + "\"}]" +
-                "\"type\": \"disposition/attachment\"," +
-                "\"value\"" + picFile + "}"))
+                "\"attachments\": [{" +
+                "\"type\": \"image/png\"," +
+                "\"disposition\": \"attachment\"," +
+                "\"content\": \"" + encImage + "\"," +
+                "\"filename\"" + file + "}]" + "}"))
                 .build();
         HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println(response.body());

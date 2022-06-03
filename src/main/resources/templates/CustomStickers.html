@@ -38,7 +38,7 @@
 <body>
     <div layout:fragment="content" th:remove="tag">
         <div class="stickerForm" style="margin: 30px; background-color: var(--primary); width: 40%; padding: 40px; border-radius: 20px" >
-            <form method="GET" action="/CustomStickers" id="stickerOrder">
+            <form method="POST" enctype="multipart/form-data" action="/CustomStickers" id="stickerOrder">
                 <h1 style="color:var(--secondary)">Request Form</h1><br>
                 <div class="w3-row-padding", style="color: var(--secondary)">
                     <div class="w3-half">
@@ -54,8 +54,9 @@
                 <p style="color: var(--secondary)">Describe the Sticker you wish to order.</p>
                 <textarea name="description" id="description" rows="10" cols="50" placeholder="Description"></textarea>
                 <br><br>
-                <p>Upload any Reference Image</p>
-                <!--<image th:src="@{__${profile.picFile}__}" style="height: 21rem; align-self: center"></image>-->
+                <p><label for="pic" style="color: var(--secondary)">Upload a Reference Image</label></p>
+                <input type="file" id="pic" name="pic" style="height: 3.5rem; margin-top: 0;">
+                <br><br>
                 <label for="size", style="color: var(--secondary)">Sticker Size:</label>
                 <select id="size" name="size">
                     <option value="2x2">2 in x 2 in</option>
