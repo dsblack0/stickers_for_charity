@@ -36,15 +36,19 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception { //THis is going to be altered to use the JWT
         // security rules
-        /*http
+        http
                 .authorizeRequests()
-                .antMatchers(POST, "/api/person/post/**").hasAnyAuthority("ROLE_STUDENT")
-                .antMatchers(DELETE, "/api/person/delete/**").hasAnyAuthority("ROLE_ADMIN")
-                .antMatchers("/database/personupdate/**").hasAnyAuthority("ROLE_STUDENT")
-                .antMatchers("/database/persondelete/**").hasAnyAuthority("ROLE_ADMIN")
-                .antMatchers( "/api/person/**").permitAll()
+                .antMatchers(POST, "/api/aboutTeam/post/**").hasAnyAuthority("CLUB_ADMIN")
+                .antMatchers(DELETE, "/api/aboutTeam/delete/**").hasAnyAuthority("CLUB_ADMIN")
+                .antMatchers("/aboutTeamCreate/**").hasAnyAuthority("CLUB_ADMIN")
+                .antMatchers("/aboutTeamEdit/**").hasAnyAuthority("CLUB_ADMIN")
+                .antMatchers("/aboutTeamDelete/**").hasAnyAuthority("CLUB_ADMIN")
+                .antMatchers("/clubMembers/**").hasAnyAuthority("CLUB_ADMIN")
+                .antMatchers("/reviewsupdate/**").hasAnyAuthority("CLUB_ADMIN")
+                .antMatchers("/reviewsdelete/**").hasAnyAuthority("CLUB_ADMIN")
+                .antMatchers( "/aboutTeam/**").permitAll()
                 .antMatchers( "/api/refresh/token/**").permitAll()
-                .antMatchers("/", "/starters/**", "/frontend/**", "/mvc/**", "/database/person/**", "/database/personcreate", "/database/scrum/**", "/course/**").permitAll()
+                .antMatchers("/", "/CustomStickers", "/donations", "/events", "/RequestWorkshop", "/reviews", "/reviewscreate", "/signup", "/signupSuccess", "/stickerSale").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -53,8 +57,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/database/person")
-                .permitAll()*/
+                .logoutSuccessUrl("/")
+                .permitAll()
         ;
         // Cross-Site Request Forgery needs to be disabled to allow activation of JS Fetch URIs
         http.csrf().disable();

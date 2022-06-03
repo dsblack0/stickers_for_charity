@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head><div layout:fragment="metadata" th:remove="tag">
+    <title>Sign Up</title>
+    <style>
+        html, body {
+            background-image: url('https://images.pexels.com/photos/53893/pexels-photo-53893.jpeg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .signup-box {
+            background-color: var(--primary);
+            margin: 50px 250px;
+            border-radius: 25px;
+            text-align: center;
+            padding-bottom: 2rem;
+            padding-top: 2rem;
+        }
+        input {
+            background-color: var(--secondary);
+            border: 1px solid var(--secondary);
+            border-radius: 4px;
+            width: 50%;
+            margin-top: 2rem;
+            height: 2.5rem;
+            padding: 12px 20px;
+
+        }
+        ::placeholder {
+            color: var(--header);
+            font-size: large;
+        }
+        button {
+            background-color: var(--header);
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: large;
+            border: 1px solid var(--secondary);
+            border-radius: 4px;
+            margin-top: 2rem;
+            text-align: center;
+            width: 15%;
+            padding: 3px 0;
+        }
+    </style>
+</div></head>
+<body><div layout:fragment="content" th:remove="tag">
+    <h1 style=" text-align: center; color: var(--secondary); margin-top: 20px;">Sign Up to Become a Club Member!</h1>
+    <div class="signup-box justify-content-center align-items-center">
+        <form class="form" action="#" th:action="@{/signup}" th:object="${person}" method="POST">
+            <div class="create-form justify-content-center align-items-center">
+                <input type="text" th:field="*{name}" id="name" placeholder="Name">
+                <small th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</small>
+                <input type="email" th:field="*{email}" id="email" placeholder="Email">
+                <small th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</small>
+                <input type="number" th:field="*{grade}" id="grade" placeholder="Grade">
+                <small th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}">Grade Error</small>
+                <p><label for="password" style="color: var(--header); font-size: large; font-weight: bold; background-color: var(--secondary); border: 1px solid var(--secondary); border-radius: 4px; width: 50%; margin-top: 2rem; padding-top: 12px; padding-bottom: 12px">Enter any random password. This does not count for anything.</label></p>
+                <input type="password" th:field="*{password}" id="password" placeholder="Password">
+                <small th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</small>
+                <p><button type="submit">Sign Up</button></p>
+            </div>
+        </form>
+    </div>
+    <div class="signup-box justify-content-center align-items-center">
+        <h3><a href="/clubMembers" style="color: var(--secondary);">List of All Club Members</a></h3>
+    </div>
+</div>
+</body>
+</html>

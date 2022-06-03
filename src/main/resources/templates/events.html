@@ -5,12 +5,41 @@
 
 <head><div layout:fragment="metadata" th:remove="tag">
     <title>Events</title>
+    <style>
+        html, body {
+            background-image: url('https://papers.co/wallpaper/papers.co-nb66-sky-sunset-nature-orange-gradation-34-iphone6-plus-wallpaper.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
 </div></head>
 
 <body><div layout:fragment="content" th:remove="tag">
     <!-- Start of body content specific to page -->
     <div class="content" style="margin-left: 15%; margin-right: 15%;">
         <h1 class="titlehead">Events</h1>
+        <div class="row justify-content-md-center">
+            <div class="card-columns">
+            <table class="table" style="color:white;">
+                <tr th:each="event : ${eventsList}">
+
+                        <div class="card shadow-sm" style="background-color: var(--primary)">
+                            <div class="card-body" style="background-color: var(--primary)">
+                                <h5 class="card-text" th:text="${event.getTitle()}" style="color: var(--accents);"></h5>
+                                <h6 class="card-text" th:text="${event.getDate()}" style="color: var(--header);"></h6>
+                                <p class="card-text" th:text="${event.getDescription()}" style="color: var(--body);"></p>
+                            </div>
+                        </div>
+
+                </tr>
+            </table>
+            </div>
+        </div>
+
+
+        <!--
         <div class="card-deck">
             <div class="card shadow-sm" style="background-color: var(--primary)">
                 <div class="card-body" style=" background-color: var(--primary)">
@@ -52,6 +81,8 @@
                 </div>
             </div>
         </div>
+        -->
+
         <script>
             ScrollReveal().reveal('.info', {
                 interval: 16,

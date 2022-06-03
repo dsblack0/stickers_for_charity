@@ -24,13 +24,11 @@ This class has an instance of Java Persistence API (JPA)
 @Service
 @Transactional
 public class ModelRepository implements UserDetailsService {  // "implements" ties ModelRepo to Spring Security
-    // Encapsulate many object into a single Bean (Person, Roles, and Scrum)
+    // Encapsulate many object into a single Bean (Person, Roles)
     @Autowired  // Inject PersonJpaRepository
     private PersonJpaRepository personJpaRepository;
     @Autowired  // Inject RoleJpaRepository
     private RoleJpaRepository roleJpaRepository;
-    @Autowired  // Inject RoleJpaRepository
-    private ScrumJpaRepository scrumJpaRepository;
 
     // Setup Password style for Database storing and lookup
     @Autowired  // Inject PasswordEncoder
@@ -42,8 +40,8 @@ public class ModelRepository implements UserDetailsService {  // "implements" ti
 
     /* UserDetailsService Overrides and maps Person & Roles POJO into Spring Security */
     @Override
-    public org.springframework.security.core.userdetails.UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Person person = personJpaRepository.findByEmail(email); // setting variable user equal to the method finding the username in the database
+    public org.springframework.security.core.userdetails.UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
+        Person person = personJpaRepository.findByName(name); // setting variable user equal to the method finding the username in the database
         if(person==null){
             throw new UsernameNotFoundException("User not found in database");
         }
@@ -51,7 +49,7 @@ public class ModelRepository implements UserDetailsService {  // "implements" ti
         person.getRoles().forEach(role -> { //loop through roles
             authorities.add(new SimpleGrantedAuthority(role.getName())); //create a SimpleGrantedAuthority by passed in role, adding it all to the authorities list, list of roles gets past in for spring security
         });
-        return new org.springframework.security.core.userdetails.User(person.getEmail(), person.getPassword(), authorities);
+        return new org.springframework.security.core.userdetails.User(person.getName(), person.getPassword(), authorities);
     }
 
 
@@ -88,7 +86,7 @@ public class ModelRepository implements UserDetailsService {  // "implements" ti
     }
 
     public void delete(long id) {
-        deleteScrumMember(id);   // make sure ID is no longer present in SCRUM Teams
+        // make sure ID is no longer present in SCRUM Teams
         personJpaRepository.deleteById(id);
     }
 
@@ -142,43 +140,5 @@ public class ModelRepository implements UserDetailsService {  // "implements" ti
     }
 
 
-    /* Scrum Section */
-
-    public void saveScrum(Scrum scrum) {
-        scrumJpaRepository.save(scrum);
-    }
-
-    public List<Scrum> listAllScrums() {
-        return scrumJpaRepository.findAllByOrderByNameAsc();
-    }
-
-    public Scrum getScrum(long id) {
-        return (scrumJpaRepository.findById(id).isPresent())
-                ? scrumJpaRepository.findById(id).get()
-                : null;
-    }
-
-    public void deleteScrum(long id) {
-        scrumJpaRepository.deleteById(id);
-    }
-
-    private boolean is_deletedScrum(Person p, long id) {
-        return (p != null && p.getId() == id );
-    }
-
-    public void deleteScrumMember(long id) {
-        List<Scrum> scrum_list = scrumJpaRepository.findAll();
-        for (Scrum scrum: scrum_list) {
-            boolean changed = false;
-            if (is_deletedScrum(scrum.getPrimary(), id)) {scrum.setPrimary(null); changed = true;}
-            if (is_deletedScrum(scrum.getMember1(), id)) {scrum.setMember1(null); changed = true;}
-            if (is_deletedScrum(scrum.getMember2(), id)) {scrum.setMember2(null); changed = true;}
-            if (is_deletedScrum(scrum.getMember3(), id)) {scrum.setMember3(null); changed = true;}
-            if (is_deletedScrum(scrum.getMember4(), id)) {scrum.setMember4(null); changed = true;}
-            if (changed) {
-                scrumJpaRepository.save(scrum);}
-        }
-
-    }
 
 }

@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}" lang="en">
+
+<head><div layout:fragment="metadata" th:remove="tag">
+    <title>Add Event</title>
+    <style>
+        html, body {
+            background-image: url('https://papers.co/wallpaper/papers.co-nb66-sky-sunset-nature-orange-gradation-34-iphone6-plus-wallpaper.jpg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        input {
+            background-color: var(--bg);
+            border: 1px solid var(--bg);
+            border-radius: 4px;
+            width: 50%;
+            margin-top: 2rem;
+            height: 2.5rem;
+            padding: 12px 20px;
+
+        }
+        ::placeholder {
+            color: var(--header);
+            font-size: large;
+        }
+        button {
+            background-color: var(--header);
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: large;
+            border: 1px solid var(--secondary);
+            border-radius: 4px;
+            margin-top: 2rem;
+            text-align: center;
+            width: 15%;
+            padding: 3px 0;
+        }
+    </style>
+</div></head>
+
+<body><div layout:fragment="content" th:remove="tag">
+    <div class="content" style="margin-left: 15%; margin-right: 15%;">
+        <h1 style="text-align: center; color: var(--secondary); margin-top: 20px;">Create Event</h1>
+            <form class="form" role="form" action="#">
+                <div class="form-group mx-sm">
+                    <input type="text" class="form-control" id="title" name="title" placeholder="enter event name">
+                </div>
+                <div class="form-group mx-sm">
+                    <input type="text" class="form-control" id="date" name="date" placeholder="enter date (xx/xx/xxxx)">
+                </div>
+                <div class="form-group mx-sm">
+                    <textarea type="text" class="form-control" id="description" name="description" placeholder="write description"></textarea>
+                </div>
+                <p><button type="submit">ADD</button></p>
+            </form>
+    </div>
+</div></body>
+</html>

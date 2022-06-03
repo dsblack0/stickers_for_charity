@@ -102,6 +102,6 @@ public class CustomStickers {
         model.addAttribute("description", description);
         model.addAttribute("size", size);
         model.addAttribute("quantity", quantity);
-        return "/CustomStickers";
+        return "CustomStickers";
     }
 }
