@@ -19,3 +19,6 @@
      - most likely can't use with API (look into oas?)
 - can include a cart feature so the user can add multiple stickers and then "checkout"
  
+## Final Sponsor Response
+From Discord Channel b/c club has finished meeting for the year
+![feedback](https://user-images.githubusercontent.com/72475036/171790846-a9f0f722-4e38-4eb6-a886-d75e95863141.PNG)
