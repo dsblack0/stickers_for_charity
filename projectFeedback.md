@@ -20,5 +20,5 @@
 - can include a cart feature so the user can add multiple stickers and then "checkout"
  
 ## Final Sponsor Response
-From Discord Channel b/c club has finished meeting for the year
+From Discord Channel b/c club has finished meeting for the year (Refers to Kaavya, b/c she sent it on the channel)
 ![feedback](https://user-images.githubusercontent.com/72475036/171790846-a9f0f722-4e38-4eb6-a886-d75e95863141.PNG)
