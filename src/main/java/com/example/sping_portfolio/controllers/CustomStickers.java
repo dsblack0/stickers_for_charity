@@ -21,7 +21,7 @@ import java.util.Base64;
 public class CustomStickers {
 
     @GetMapping("/CustomStickers")
-    public String CustomStickers() { return "/CustomStickers"; }
+    public String CustomStickers() { return "CustomStickers"; }
 
     @PostMapping("/CustomStickers")
     public String CustomStickers(@RequestParam(name="name", required=false, defaultValue = "") String name,
