@@ -26,8 +26,8 @@ public class ModelInit {
             // make sure every record added has a Default encrypted password and ROLE_STUDENT
             modelRepository.defaults("password", "CLUB_MEMBER");
 
-            // make sure privileged roles exist for Teacher
-            modelRepository.addRoleToPerson("sfcadmin", "CLUB_ADMIN");
+            // make sure privileged roles exist for Admins
+            modelRepository.addRoleToPerson("sfc_admin", "CLUB_ADMIN");
 
             // review/validate/test by performing output to console
             System.out.println(modelRepository.listAll());
