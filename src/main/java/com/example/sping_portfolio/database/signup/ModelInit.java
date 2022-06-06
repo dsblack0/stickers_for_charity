@@ -27,7 +27,7 @@ public class ModelInit {
             modelRepository.defaults("password", "CLUB_MEMBER");
 
             // make sure privileged roles exist for Teacher
-            modelRepository.addRoleToPerson("sfc_admin", "CLUB_ADMIN");
+            modelRepository.addRoleToPerson("sfcadmin", "CLUB_ADMIN");
 
             // review/validate/test by performing output to console
             System.out.println(modelRepository.listAll());
